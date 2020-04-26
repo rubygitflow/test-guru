@@ -30,7 +30,7 @@ development:
   pool: 5
   timeout: 5000
   username: dekan
-  password: dekan123
+  password: 
 
 test:
   adapter: postgresql
@@ -39,4 +39,4 @@ test:
   pool: 5
   timeout: 5000
   username: dekan
-  password: dekan123
+  password: 
