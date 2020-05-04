@@ -14,14 +14,14 @@ category_sections.each do |section|
 end
 
 tests = Test.create!([
-  {title: 'Ruby beginner', level: 1, category: categories[0]},
-  {title: 'Ruby master', level: 3, category:  categories[0]},
-  {title: 'RoR beginner', level: 1, category:  categories[1]},
-  {title: 'RoR master', level: 3, category:  categories[1]},
-  {title: 'JavaScript programmer', level: 2, category:  categories[2]},
-  {title: 'React programmer', level: 3, category:  categories[2]},
-  {title: 'HTML coder', level: 1, category:  categories[3]},
-  {title: 'CSS designer', level: 2, category:  categories[4]}
+  {title: 'Ruby beginner', level: 1, category: categories[0], author: User.first},
+  {title: 'Ruby master', level: 3, category:  categories[0], author: User.first},
+  {title: 'RoR beginner', level: 1, category:  categories[1], author: User.first},
+  {title: 'RoR master', level: 3, category:  categories[1], author: User.first},
+  {title: 'JavaScript programmer', level: 2, category:  categories[2], author: User.first},
+  {title: 'React programmer', level: 3, category:  categories[2], author: User.first},
+  {title: 'HTML coder', level: 1, category:  categories[3], author: User.first},
+  {title: 'CSS designer', level: 2, category:  categories[4], author: User.first}
 ])
 
 
