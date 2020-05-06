@@ -15,22 +15,11 @@ class Test < ApplicationRecord
 
   # https://apidock.com/rails/ActiveModel/Validations/ClassMethods/validates
   validates :title, presence: true, uniqueness: { scope: :level }
-  validates :level, numericality: { only_integer: true }
+  # http://rusrails.ru/active-record-validations
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  # https://apidock.com/rails/ActiveModel/Validations/ClassMethods/validate
-  validate :validate_level_positive, on: :create
 
   def self.test_by_category(category_title)
-    # Test.joins(:category)
-    #     .where(categories: { title: category_title })
-    #     .order("tests.title desc")
-    #     .pluck("tests.title")
     by_category(category_title).order_down.pluck(:title)
-  end
-
-  private
-
-  def validate_level_positive
-    errors.add(:level, 'Use only a positive value') if level.to_i < 0
   end
 end
