@@ -1,0 +1,27 @@
+<h1><%= @test.title</h1>
+<br>
+<h2>Questions list</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% question_index = 0 %>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question_index += 1 %></td>
+        <td><%= question.body %></td>
+        <td><%= link_to 'Show', question %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New question', new_test_question_path(@test) %>
