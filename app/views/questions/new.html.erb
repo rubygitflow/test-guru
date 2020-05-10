@@ -1,5 +1,15 @@
 <h1><%= @test.title</h1>
 <br>
+<% if @question.errors.messages[:body].present? %>
+  <p>
+    Errors<br>  
+    <% @question.errors.messages[:body].each do |message| %>
+      <b>— <%= message %></b>
+    <% end %>
+  </p>
+  <br>
+<% end %>
+
 <h>Create new question</h>
 
 <form action="<%= test_questions_path(@test) %>" method="post">

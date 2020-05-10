@@ -19,8 +19,13 @@ class QuestionsController < ApplicationController
 
   def create
     @question = @test.questions.create(question_params)
-    # https://apidock.com/rails/v2.3.8/ActionController/Base/redirect_to
-    redirect_to test_questions_url
+    # https://api.rubyonrails.org/classes/ActiveModel/Errors.html
+    if @question.errors.messages.empty?
+      # https://apidock.com/rails/v2.3.8/ActionController/Base/redirect_to
+      redirect_to test_questions_url
+    else
+      redirect_to new_test_question_url(@test)
+    end
   end
 
   def destroy
