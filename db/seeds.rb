@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!([{name: "admin", password: "qwerty", email: "admin@gmail.com"}, 
-              {name: "user", password: "12345", email: "user@gmail.com"}])
+users = User.create!([{name: "admin", password: "qwerty", email: "admin@gmail.com"}, 
+                      {name: "user", password: "12345", email: "user@gmail.com"}])
 
 category_sections = %w[Ruby RoR JavaScript React HTML CSS]
 categories = []
@@ -14,16 +14,22 @@ category_sections.each do |section|
   categories << Category.create!(title: section)
 end
 
-tests = Test.create!([
-  {title: 'Ruby beginner', level: 1, category: categories[0], author: User.first},
-  {title: 'Ruby master', level: 3, category:  categories[0], author: User.first},
-  {title: 'RoR beginner', level: 1, category:  categories[1], author: User.first},
-  {title: 'RoR master', level: 3, category:  categories[1], author: User.first},
-  {title: 'JavaScript programmer', level: 2, category:  categories[2], author: User.first},
-  {title: 'React programmer', level: 3, category:  categories[2], author: User.first},
-  {title: 'HTML coder', level: 1, category:  categories[3], author: User.first},
-  {title: 'CSS designer', level: 2, category:  categories[4], author: User.first}
-])
+
+tests_data = [
+  {title: 'Ruby beginner', level: 1, category: categories[0], author: users[0]},
+  {title: 'Ruby master', level: 3, category:  categories[0], author: users[0]},
+  {title: 'RoR beginner', level: 1, category:  categories[1], author: users[0]},
+  {title: 'RoR master', level: 3, category:  categories[1], author: users[0]},
+  {title: 'JavaScript programmer', level: 2, category:  categories[2], author: users[0]},
+  {title: 'React programmer', level: 3, category:  categories[2], author: users[0]},
+  {title: 'HTML coder', level: 1, category:  categories[3], author: users[0]},
+  {title: 'CSS designer', level: 2, category:  categories[4], author: users[0]}
+]
+
+tests = []
+tests_data.each do |test_data|
+  tests << Test.create!(test_data)
+end
 
 
 length = 50

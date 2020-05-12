@@ -6,7 +6,7 @@ class Answer < ApplicationRecord
   validates :body, presence: true
   
   # https://apidock.com/rails/ActiveModel/Validations/ClassMethods/validate
-  validate :validate_answer_limit, on: :create
+  validate :validate_answers_limit, on: :create
 
   private
 

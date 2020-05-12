@@ -4,5 +4,5 @@ class Category < ApplicationRecord
   validates :title, presence: true
 
   # https://apidock.com/rails/ActiveRecord/Base/default_scope/class
-  default_scope order(title: :asc)
+  default_scope { order(title: :asc) }
 end
