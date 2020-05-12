@@ -1,25 +1,11 @@
-<h1 class="section_caption"><%= @test.title</h1>
-<br>
-<% if @question.errors.messages[:body].present? %>
-  <p>
-    <div class="error_list_message">Errors<div> 
-    <br>  
-    <% @question.errors.messages[:body].each do |message| %>
-      <b>— <%= message %></b>
-    <% end %>
-  </p>
-  <br>
-<% end %>
+<%= render 'test_title', test: @test %>
 
-<h class="page_caption">Create new question</h>
+<%= render 'shared/errors', resource: question %>
 
-<form action="<%= test_questions_path(@test) %>" method="post">
-  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+<h2 class="page_caption"><%= question_header(@question) %></h2>
 
-  <p>
-    <label for="question-body" class="edit_caption">Question:</label>
-    <input type="text" name="question[body]" id="question-body" size="70" class="edit_text">
-  </p>
+<%= render 'form', question: @question %>
 
-  <input type="submit" value="Create" class="action_button">
-</form>
+<p>
+  <div class="navigation_link"><%= link_to 'Go to the test', test_path(@question.test) %></div>
+</p>
