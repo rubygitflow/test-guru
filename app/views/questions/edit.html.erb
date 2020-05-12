@@ -1,0 +1,23 @@
+<h1 class="section_caption"><%= @test.title</h1>
+<% if @question.errors.messages[:body].present? %>
+  <p>
+    <div class="error_list_message">Errors<div>  
+    <br>  
+    <% @question.errors.messages[:body].each do |message| %>
+      <b class="error_list_message">— <%= message %></b>
+    <% end %>
+  </p>
+  <br>
+<% end %>
+
+<br>
+<h class="page_caption">Edit Question</h>
+<!-- https://apidock.com/rails/ActionView/Helpers/FormHelper/form_with -->
+<%= form_with(model: question, local: true) do |form| %>
+  <div class="edit_text">
+    <%= form.text_field :body %>
+  </div>
+  <div class="action_button">
+    <%= form.submit %>
+  </div>
+<% end %>
