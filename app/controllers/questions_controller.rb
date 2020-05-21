@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index new create]
-  before_action :find_question, only: %i[show destroy]
+  before_action :find_test, only: %i[show index new create]
+  before_action :find_question, only: %i[show destroy edit update]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
@@ -9,20 +9,19 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    # https://apidock.com/rails/ActionController/Base/render
-    # http://rusrails.ru/layouts-and-rendering-in-rails
-    render plain: @question.body
   end
 
   def new
+    @question = @test.questions.new
   end
 
   def create
-    @question = @test.questions.create(question_params)
+    @question = @test.questions.new(question_params)
     # https://api.rubyonrails.org/classes/ActiveModel/Errors.html
-    if @question.errors.messages.empty?
+    if @question.save
+      flash[:notice] = 'Question was successfully created.'
       # https://apidock.com/rails/v2.3.8/ActionController/Base/redirect_to
-      redirect_to test_questions_url
+      redirect_to test_path(@question.test)
     else
       redirect_to new_test_question_url(@test)
     end
@@ -30,8 +29,24 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
+    flash[:notice] = 'Question was successfully destroyed.'
     # https://apidock.com/rails/v2.3.8/ActionController/Base/redirect_to
-    redirect_to action: 'index'
+    redirect_to test_path(@question.test)
+  end
+
+  def edit
+  end
+
+  def update
+    if @question.update(question_params)
+      # https://api.rubyonrails.org/classes/ActionDispatch/Flash.html
+      flash[:notice] = 'Question was successfully updated.'
+      redirect_to @question
+    else
+      # https://apidock.com/rails/ActionController/Base/render
+      # http://rusrails.ru/layouts-and-rendering-in-rails
+      render :edit
+    end
   end
 
   private

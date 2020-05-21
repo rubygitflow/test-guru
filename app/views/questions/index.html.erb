@@ -1,26 +1,7 @@
-<h1><%= @test.title</h1>
-<br>
-<h2>Questions list</h2>
+<%= render 'test_title', test: @test %>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
+<%= render 'index', questions: @questions, test: @test %>
 
-  <tbody>
-    <% @questions.each_with_index do |question, index| %>
-      <tr>
-        <td><%= index += 1 %></td>
-        <td><%= question.body %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New question', new_test_question_path(@test) %>
+<p>
+  <div class="navigation_link"><%= link_to 'New question', new_test_question_path(@test) %></div>
+</p>

@@ -1,0 +1,11 @@
+<%= render 'test_title', test: @test %>
+
+<p>
+  <b class="page_caption">Body of question: </b>
+  <div class="question_body"><%= @question.body %></div>
+</p>
+
+<p>
+  <div class="navigation_link"><%= link_to 'Edit', edit_question_path(@question) %></div>
+  <div class="navigation_link"><%= link_to 'Go to the test', test_path(@question.test) %></div>
+</p>
