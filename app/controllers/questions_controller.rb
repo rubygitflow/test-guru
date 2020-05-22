@@ -1,8 +1,12 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[show index new create]
+  before_action :find_test, only: %i[index new create]
   before_action :find_question, only: %i[show destroy edit update]
+  before_action :set_test, only: %i[show edit]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+  # https://progi.pro/obrabotka-oshibok-s-pomoshyu-grape-rails-i-activerecord-10066234
+  rescue_from ActiveRecord::RecordNotFound do |e|
+    rescue_with_question_not_found(e.message)
+  end
 
   def index
     @questions = @test.questions
@@ -21,7 +25,7 @@ class QuestionsController < ApplicationController
     if @question.save
       flash[:notice] = 'Question was successfully created.'
       # https://apidock.com/rails/v2.3.8/ActionController/Base/redirect_to
-      redirect_to test_path(@question.test)
+      redirect_to test_questions_path(@question.test)
     else
       redirect_to new_test_question_url(@test)
     end
@@ -59,11 +63,17 @@ class QuestionsController < ApplicationController
     @test = Test.find(params[:test_id])
   end
 
+  def set_test
+    @test = Test.find(@question.test_id)
+  end
+
   def find_question
+    puts "#{params.inspect}"
     @question = Question.find(params[:id])
   end
 
-  def rescue_with_question_not_found
-    render html: '<h2>Question not found.</h2>'.html_safe
+  def rescue_with_question_not_found(error_message)
+    # We don't now, which record, Test or Question is wrong
+    render html: "<h2>#{error_message}.</h2>".html_safe
   end
 end

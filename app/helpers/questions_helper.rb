@@ -1,12 +1,10 @@
 module QuestionsHelper
   def question_header(question)
-    if question.present?
-      # https://api.rubyonrails.org/classes/ActiveRecord/Persistence.html#method-i-persisted-3F
-      if question.persisted?
-        "Edit \"#{question.test.title}\" Question"
-      else
-        "Create New \"#{question.test.title}\" Question"
-      end
+    # https://api.rubyonrails.org/classes/ActiveRecord/Persistence.html#method-i-persisted-3F
+    if question.persisted?
+      "Edit Question: \"#{question.body}\""
+    else
+      "Create New Question"
     end
   end
 end

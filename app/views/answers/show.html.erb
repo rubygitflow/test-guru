@@ -1,0 +1,15 @@
+<%= render 'question_body', question: @answer.question %>
+
+<p>
+  <b class="page_caption">Body of an answer: </b>
+  <div class="answer_body"><%= @answer.body %></div>
+</p>
+<p>
+  <b class="page_caption">Correctness: </b>
+  <div class="answer_boolean"><%= @answer.correct %></div>
+</p>
+
+<p>
+  <div class="navigation_link"><%= link_to 'Edit', edit_answer_path(@answer) %></div>
+  <div class="navigation_link"><%= link_to 'Go to the question', question_path(@answer.question) %></div>
+</p>

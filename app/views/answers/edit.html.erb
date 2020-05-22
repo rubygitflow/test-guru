@@ -1,0 +1,12 @@
+<%= render 'question_body', question: @answer.question %>
+
+<h2 class="page_caption"><%= answer_header(@answer) %></h2>
+
+<%= render 'shared/errors', resource: @answer %>
+
+<%= render 'form', answer: @answer %>
+
+<p>
+  <div class="navigation_link"><%= link_to 'Show', @answer %></div>
+  <div class="navigation_link"><%= link_to 'Go to the question', question_path(@answer.question) %></div>
+</p>

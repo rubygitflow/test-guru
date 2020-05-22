@@ -20,6 +20,7 @@
 </p>
 
 <p>
-  <div class="navigation_link"><%= link_to 'Edit', @edit_test_path(@test) %></div>
+  <div class="navigation_link"><%= link_to 'Edit', edit_test_path(@test) %></div>
+  <div class="navigation_link"><%= link_to 'Show questions', test_questions_path(@test) %></div>
   <div class="navigation_link"><%= link_to 'Go to the list', tests_path %></div>
 </p>

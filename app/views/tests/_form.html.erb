@@ -1,20 +1,24 @@
-<%= form_with(model: test, local: true) do |form| %>
-  <%= render 'shared/errors', resource: test %>
+<%= form_with(model: @test, local: true) do |form| %>
+  <%= render 'shared/errors', resource: @test %>
 
   <div class="field">
-  	<-- http://rusrails.ru/rails-form-helpers -->
+    <b><%= form.label :category %>:</b>
+    <!-- http://rusrails.ru/rails-form-helpers -->
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </div>
 
   <div class="field">
+    <b><%= form.label :title %>:</b>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
+    <b><%= form.label :level %>:</b>
     <%= form.number_field :level %>
   </div>
 
   <div class="field">
+    <b><%= form.label :author %>:</b>
     <%= form.collection_select :author_id, User.all, :id, :email, prompt: true %>
   </div>
 
