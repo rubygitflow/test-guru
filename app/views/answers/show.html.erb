@@ -10,6 +10,10 @@
 </p>
 
 <p>
-  <div class="navigation_link"><%= link_to 'Edit', edit_answer_path(@answer) %></div>
-  <div class="navigation_link"><%= link_to 'Go to the question', question_path(@answer.question) %></div>
+  <div class="navigation_link">
+  	<%= link_to 'Edit', edit_answer_path(@answer) %>
+  </div>
+  <div class="navigation_link">
+  	<%= link_to 'Go to the question', question_path(@answer.question) %>
+  </div>
 </p>

@@ -4,7 +4,11 @@
   <div class="field">
     <b><%= form.label :category %>:</b>
     <!-- http://rusrails.ru/rails-form-helpers -->
-    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+    <%= form.collection_select :category_id, 
+                                Category.all, 
+                                :id, 
+                                :title, 
+                                prompt: true %>
   </div>
 
   <div class="field">
@@ -19,7 +23,11 @@
 
   <div class="field">
     <b><%= form.label :author %>:</b>
-    <%= form.collection_select :author_id, User.all, :id, :email, prompt: true %>
+    <%= form.collection_select :author_id, 
+                                User.all, 
+                                :id, 
+                                :email, 
+                                prompt: true %>
   </div>
 
   <div class="actions">

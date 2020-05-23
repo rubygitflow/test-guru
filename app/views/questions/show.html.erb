@@ -8,6 +8,10 @@
 <%= render 'answers/index', answers: @question.answers, question: @question %>
 
 <p>
-  <div class="navigation_link"><%= link_to 'Edit', edit_question_path(@question) %></div>
-  <div class="navigation_link"><%= link_to 'Go to the test', test_path(@question.test) %></div>
+  <div class="navigation_link">
+    <%= link_to 'Edit', edit_question_path(@question) %>
+  </div>
+  <div class="navigation_link">
+    <%= link_to 'Go to the test', test_path(@question.test) %>
+  </div>
 </p>

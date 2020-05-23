@@ -7,5 +7,7 @@
 <%= render 'form', question: @question %>
 
 <p>
-  <div class="navigation_link"><%= link_to 'Go to the test', test_path(@question.test) %></div>
+  <div class="navigation_link">
+    <%= link_to 'Go to the test', test_path(@question.test) %>
+  </div>
 </p>

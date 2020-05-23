@@ -1,8 +1,8 @@
 class Test < ApplicationRecord
   belongs_to :category
   has_many :questions
-  has_many :passed_tests
-  has_many :users, through: :passed_tests
+  has_many :test_passages
+  has_many :users, through: :test_passages
   belongs_to :author, class_name: "User"
 
   # https://apidock.com/rails/ActiveRecord/Scoping/Named/ClassMethods/scope
