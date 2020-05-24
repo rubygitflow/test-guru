@@ -1,0 +1,28 @@
+<!-- https://apidock.com/rails/ActionView/Helpers/FormHelper/form_with -->
+<%= form_with model: user, local: true do |form| %>
+  <%= render 'shared/errors', resource: user %>
+
+  <div class="field">
+    <b><%= form.label :name %>:</b>
+    <%= form.text_field :name, id: :user_name %>
+  </div>
+
+  <div class="field">
+    <b><%= form.label :email %>:</b>
+    <%= form.text_field :email, id: :user_email %>
+  </div>
+
+  <div class="field">
+    <b><%= form.label :password %>:</b>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="field">
+    <b><%= form.label :password_confirmation %>:</b>
+    <%= form.password_field :password_confirmation %>
+  </div>
+
+  <div class="action_button">
+    <%= form.submit %>
+  </div>
+<% end %>

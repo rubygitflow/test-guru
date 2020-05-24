@@ -1,10 +1,12 @@
 class User < ApplicationRecord
+
+  include Auth
+
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :authored_tests, class_name: "Test", foreign_key: "author_id"
 
-  # https://apidock.com/rails/ActiveModel/Validations/ClassMethods/validates
-  validates :email, presence: true
+  # has_secure_password # replaced include Auth
 
   def test_by_level(level)
     tests.where(level: level)

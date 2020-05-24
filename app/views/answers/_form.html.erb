@@ -1,5 +1,7 @@
 <!-- https://apidock.com/rails/ActionView/Helpers/FormHelper/form_with -->
-<%= form_with(model: action_name == 'edit' ? @answer : [@answer.question, @answer], local: true) do |form| %>
+<%= form_with(model: action_name == 'edit' ? answer : [answer.question, answer], local: true) do |form| %>
+  <%= render 'shared/errors', resource: answer %>
+
   <div class="edit_text">
     <b><%= form.label :body %>:</b>
     <%= form.text_area :body, id: :answer_body, rows: 7, cols: 80 %>
