@@ -6,6 +6,7 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_update_set_next_question
 
+  GOOD_PROGRESS = 85
 
   def current_question_number
     test.questions.index(current_question) + 1

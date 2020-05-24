@@ -2,7 +2,7 @@
 
 <h2>
   Correct answers: 
-  <% if @completed_percent >= 85 %>
+  <% if success?(@completed_percent) %>
     <div style = "color: green"><%= @completed_percent %>%.</div>
     <br>
     Congratulation! Test was passed.
