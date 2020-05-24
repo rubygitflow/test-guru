@@ -1,0 +1,16 @@
+<h1>Test "<%= @test_passage.test.title %>" was completed.</h1>
+
+<h2>
+  Correct answers: 
+  <% if success?(@completed_percent) %>
+    <div style = "color: green"><%= @completed_percent %>%.</div>
+    <br>
+    Congratulation! Test was passed.
+  <% else %>
+    <div style = "color: red"><%= @completed_percent %>%.</div>
+    <br>
+    Unfortunately, the test was failed!
+  <% end %>
+</h2>
+
+<p><%= link_to 'Back to tests', tests_path %></p>

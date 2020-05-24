@@ -1,6 +1,8 @@
 <% if resource.errors.messages[:body].present? %>
   <p>
-    <div class="error_list_message"><%= pluralize(resource.errors.count, "error") %> detected:<div> 
+    <div class="error_list_message">
+      <%= pluralize(resource.errors.count, "error") %> detected:
+    </div> 
     <br>  
     <% resource.errors.messages[:body].each do |message| %>
       <b class="error_list_message">— <%= message %></b>

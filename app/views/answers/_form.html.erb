@@ -1,0 +1,14 @@
+<!-- https://apidock.com/rails/ActionView/Helpers/FormHelper/form_with -->
+<%= form_with(model: action_name == 'edit' ? @answer : [@answer.question, @answer], local: true) do |form| %>
+  <div class="edit_text">
+    <b><%= form.label :body %>:</b>
+    <%= form.text_area :body, id: :answer_body, rows: 7, cols: 80 %>
+  </div>
+  <div class="edit_boolean">
+    <b><%= form.label :correct %>:</b>
+    <%= form.check_box :correct, id: :answer_correct %>
+  </div>
+  <div class="action_button">
+    <%= form.submit %>
+  </div>
+<% end %>

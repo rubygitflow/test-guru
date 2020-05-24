@@ -1,12 +1,14 @@
-<%= render 'test_title', test: @test %>
+<%= render 'test_title', test: @question.test %>
 
 <h2 class="page_caption"><%= question_header(@question) %></h2>
 
-<%= render 'shared/errors', resource: question %>
+<%= render 'shared/errors', resource: @question %>
 
-%= render 'form', question: @question %>
+<%= render 'form', question: @question %>
 
 <p>
   <div class="navigation_link"><%= link_to 'Show', @question %></div>
-  <div class="navigation_link"><%= link_to 'Go to the test', test_path(@question.test) %></div>
+  <div class="navigation_link">
+    <%= link_to 'Go to the test', test_path(@question.test) %>
+  </div>
 </p>

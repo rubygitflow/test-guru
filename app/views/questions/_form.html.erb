@@ -1,7 +1,8 @@
 <!-- https://apidock.com/rails/ActionView/Helpers/FormHelper/form_with -->
-<%= form_with(model: action_name == 'edit' ? question : [question.test, question], local: true) do |form| %>
+<%= form_with(model: action_name == 'edit' ? @question : [@question.test, @question], local: true) do |form| %>
   <div class="edit_text">
-    <%= form.text_field :body %>
+    <b><%= form.label :body %>:</b>
+    <%= form.text_area :body, id: :question_body, rows: 7, cols: 80 %>
   </div>
   <div class="action_button">
     <%= form.submit %>
