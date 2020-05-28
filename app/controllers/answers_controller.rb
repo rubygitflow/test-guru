@@ -8,6 +8,7 @@ class AnswersController < ApplicationController
 
   def new
     @answer = @question.answers.new
+    puts "#{@answer.inspect}"
   end
 
   def create

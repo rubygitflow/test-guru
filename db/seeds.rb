@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-users = User.create!([{name: "admin", password: "qwerty", email: "admin@gmail.com"}, 
-                      {name: "user", password: "12345", email: "user@gmail.com"}])
+users = User.create!([{name: "admin", email: "admin@gmail.com"}, 
+                      {name: "user", email: "user@gmail.com"}])
 
 category_sections = %w[Ruby RoR JavaScript React HTML CSS]
 categories = []

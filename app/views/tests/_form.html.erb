@@ -1,5 +1,6 @@
-<%= form_with(model: @test, local: true) do |form| %>
-  <%= render 'shared/errors', resource: @test %>
+<!-- https://apidock.com/rails/ActionView/Helpers/FormHelper/form_with -->
+<%= form_with(model: test, local: true) do |form| %>
+  <%= render 'shared/errors', resource: test %>
 
   <div class="field">
     <b><%= form.label :category %>:</b>
