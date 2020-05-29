@@ -5,8 +5,7 @@
 <%= render 'form', answer: @answer %>
 
 <p>
-  <div class="navigation_link"><%= link_to 'Show', @answer %></div>
   <div class="navigation_link">
-    <%= link_to 'Go to the question', question_path(@answer.question) %>  
+    <%= link_to 'Go to the question', admin_question_path(@answer.question) %>
   </div>
 </p>

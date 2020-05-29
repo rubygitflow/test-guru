@@ -1,4 +1,4 @@
-class AnswersController < ApplicationController
+class Admin::AnswersController < Admin::BaseController
   before_action :find_question, only: %i[new create]
   before_action :find_answer, only: %i[show destroy edit update]
   before_action :set_question, only: %i[show edit]
@@ -16,7 +16,7 @@ class AnswersController < ApplicationController
 
     if @answer.save
       flash[:notice] = 'Answer was successfully created.'
-      redirect_to @answer
+      redirect_to admin_answer_path(@answer)
     else
       render :new
     end
@@ -25,7 +25,7 @@ class AnswersController < ApplicationController
   def destroy
     @answer.destroy
     flash[:notice] = 'Answer was successfully destroyed.'
-    redirect_to question_path(@answer.question)
+    redirect_to admin_question_path(@answer.question)
   end
 
   def edit
@@ -34,7 +34,7 @@ class AnswersController < ApplicationController
   def update
     if @answer.update(answer_params)
       flash[:notice] = 'Answer was successfully updated.'
-      redirect_to @answer
+      redirect_to admin_answer_path(@answer)
     else
       render :edit
     end

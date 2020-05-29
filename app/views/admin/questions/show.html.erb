@@ -5,13 +5,13 @@
   <div class="question_body"><%= @question.body %></div>
 </p>
 
-<%= render 'answers/index', answers: @question.answers, question: @question %>
+<%= render 'admin/answers/index', answers: @question.answers, question: @question %>
 
 <p>
   <div class="navigation_link">
-    <%= link_to 'Edit', edit_question_path(@question) %>
+    <%= link_to 'Edit', edit_admin_question_path(@question) %>
   </div>
   <div class="navigation_link">
-    <%= link_to 'Go to the test', test_path(@question.test) %>
+    <%= link_to 'Go to the test', admin_test_path(@question.test) %>
   </div>
 </p>

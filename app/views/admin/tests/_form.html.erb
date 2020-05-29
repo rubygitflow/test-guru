@@ -1,5 +1,5 @@
 <!-- https://apidock.com/rails/ActionView/Helpers/FormHelper/form_with -->
-<%= form_with(model: test, local: true) do |form| %>
+<%= form_with(model: [:admin, test], local: true) do |form| %>
   <%= render 'shared/errors', resource: test %>
 
   <div class="field">
@@ -22,14 +22,6 @@
     <%= form.number_field :level %>
   </div>
 
-  <div class="field">
-    <b><%= form.label :author %>:</b>
-    <%= form.collection_select :author_id, 
-                                User.all, 
-                                :id, 
-                                :email, 
-                                prompt: true %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>

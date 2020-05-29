@@ -1,4 +1,4 @@
-class QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::BaseController
   before_action :find_test, only: %i[index new create]
   before_action :find_question, only: %i[show destroy edit update]
   before_action :set_test, only: %i[show edit]
@@ -25,9 +25,9 @@ class QuestionsController < ApplicationController
     if @question.save
       flash[:notice] = 'Question was successfully created.'
       # https://apidock.com/rails/v2.3.8/ActionController/Base/redirect_to
-      redirect_to test_questions_path(@question.test)
+      redirect_to admin_test_questions_path(@question.test)
     else
-      redirect_to new_test_question_url(@test)
+      redirect_to new_admin_test_question_url(@test)
     end
   end
 
@@ -35,7 +35,7 @@ class QuestionsController < ApplicationController
     @question.destroy
     flash[:notice] = 'Question was successfully destroyed.'
     # https://apidock.com/rails/v2.3.8/ActionController/Base/redirect_to
-    redirect_to test_path(@question.test)
+    redirect_to admin_test_path(@question.test)
   end
 
   def edit
@@ -45,7 +45,7 @@ class QuestionsController < ApplicationController
     if @question.update(question_params)
       # https://api.rubyonrails.org/classes/ActionDispatch/Flash.html
       flash[:notice] = 'Question was successfully updated.'
-      redirect_to @question
+      redirect_to admin_question_path(@question)
     else
       # https://apidock.com/rails/ActionController/Base/render
       # http://rusrails.ru/layouts-and-rendering-in-rails

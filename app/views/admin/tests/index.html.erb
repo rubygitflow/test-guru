@@ -1,0 +1,43 @@
+<h1>Tests</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>№</th>
+    <th>Category</th>
+    <th>Title</th>
+    <th>Level</th>
+    <th>Author</th>
+    <th>Count of questions</th>
+    <th colspan="4">Actions</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <% @tests.each.with_index(1) do |test, index| %>
+      <tr>
+        <td><%= index %></td>
+        <td><%= test.category.title %></td>
+        <td><%= test.title %></td>
+        <td><%= test.level %></td>
+        <td><%= test.author.email %></td>
+        <td><%= link_to "#{test.questions.size}", 
+                        admin_test_questions_path(test) %></td>
+        <td><%= link_to 'Show', admin_test_path(test) %></td>
+        <td><%= link_to 'Edit', edit_admin_test_path(test) %></td>
+        <td><%= link_to 'Delete', 
+                        admin_test_path(test), 
+                        method: :delete, 
+                        data: {confirm: 'Are you sure?'}, 
+                        remote: true%></td>
+        <td><%= button_to 'Start', start_test_path(test) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<p>
+  <div class="navigation_link"><%= link_to 'New test', new_admin_test_path %></div>
+</p>

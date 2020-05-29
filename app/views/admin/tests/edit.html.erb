@@ -3,8 +3,8 @@
 <%= render 'form', test: @test %>
 
 <p>
-  <div class="navigation_link"><%= link_to 'Show', @test %></div>
+  <div class="navigation_link"><%= link_to 'Show', admin_test_path(@test) %></div>
   <div class="navigation_link">
-    <%= link_to 'Go to the list', tests_path %>
+    <%= link_to 'Go to the list', admin_tests_path %>
   </div>
 </p>
