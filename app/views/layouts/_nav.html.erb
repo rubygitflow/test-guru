@@ -5,12 +5,12 @@
 
   <div class="header_right">
     <p class="user_menu">
-      <% if logged_in? %>
+      <% if user_signed_in? %>
         <b>Welcome, <%= current_user.name %> Guru</b>
-        <%= link_to 'Logout', logout_path, method: :delete %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
       <% else %>
-        <%= link_to 'Log In', login_path %>
-        <%= link_to 'Registration', signup_path %>
+        <%= link_to 'Log In', new_user_session_path  %>
+        <%= link_to 'Registration', new_user_registration_path  %>
       <% end %>
     </p>
   </div>

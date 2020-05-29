@@ -12,11 +12,7 @@
 
   <body>
     <%= render 'layouts/nav' %>
-    <% if flash[:notice] %>
-      <p class="notice"><%= flash[:notice] %></p>
-    <% elsif flash[:alert] %>
-      <h1 class="alert"><%= flash[:alert] %></h1>
-    <% end %>
+    <%= render 'shared/flash' %>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>

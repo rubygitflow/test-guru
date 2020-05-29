@@ -9,7 +9,7 @@
     <th>Level</th>
     <th>Author</th>
     <th>Count of questions</th>
-    <th colspan="4">Actions</th>
+    <th>Actions</th>
   </tr>
   </thead>
 
@@ -21,23 +21,9 @@
         <td><%= test.title %></td>
         <td><%= test.level %></td>
         <td><%= test.author.email %></td>
-        <td><%= link_to "#{test.questions.size}", 
-                        test_questions_path(test) %></td>
-        <td><%= link_to 'Show', test_path(test) %></td>
-        <td><%= link_to 'Edit', edit_test_path(test) %></td>
-        <td><%= link_to 'Delete', 
-                        test_path(test), 
-                        method: :delete, 
-                        data: {confirm: 'Are you sure?'}, 
-                        remote: true%></td>
+        <td><%= test.questions.size %></td>
         <td><%= button_to 'Start', start_test_path(test) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<p>
-  <div class="navigation_link"><%= link_to 'New test', new_test_path %></div>
-</p>

@@ -1,0 +1,12 @@
+<%= render 'test_title', test: @test %>
+
+<%= render 'index', questions: @questions, test: @test %>
+
+<p>
+  <div class="navigation_link">
+    <%= link_to 'New question', new_admin_test_question_path(@test) %>
+  </div>
+  <div class="navigation_link">
+    <%= link_to 'Go back to the test', admin_tests_path %>
+  </div>
+</p>

@@ -1,0 +1,32 @@
+<h1>Test</h1>
+<p>
+  <b>Category:</b>
+  <%= @test.category.title %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @test.title %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @test.level %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @test.author.email %>
+</p>
+
+<p>
+  <div class="navigation_link">
+    <%= link_to 'Edit', edit_admin_test_path(@test) %>
+  </div>
+  <div class="navigation_link">
+    <%= link_to 'Show questions', admin_test_questions_path(@test) %>
+  </div>
+  <div class="navigation_link">
+    <%= link_to 'Go to the list', admin_tests_path %>
+  </div>
+</p>

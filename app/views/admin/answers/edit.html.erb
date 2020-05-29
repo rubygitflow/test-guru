@@ -1,0 +1,12 @@
+<%= render 'question_body', question: @answer.question %>
+
+<h2 class="page_caption"><%= answer_header(@answer) %></h2>
+
+<%= render 'form', answer: @answer %>
+
+<p>
+  <div class="navigation_link"><%= link_to 'Show', admin_answer_path(@answer) %></div>
+  <div class="navigation_link">
+    <%= link_to 'Go to the question', admin_question_path(@answer.question) %>  
+  </div>
+</p>
