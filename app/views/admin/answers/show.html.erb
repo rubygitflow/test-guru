@@ -1,19 +1,19 @@
 <%= render 'question_body', question: @answer.question %>
 
 <p>
-  <b class="page_caption">Body of an answer: </b>
+  <b class="page_caption"><%= t('.header') %></b>
   <div class="answer_body"><%= @answer.body %></div>
 </p>
 <p>
-  <b class="page_caption">Correctness: </b>
+  <b class="page_caption"><%= t('.correct') %></b>
   <div class="answer_boolean"><%= @answer.correct %></div>
 </p>
 
 <p>
   <div class="navigation_link">
-  	<%= link_to 'Edit', edit_admin_answer_path(@answer) %>
+  	<%= link_to t('.edit'), edit_admin_answer_path(@answer) %>
   </div>
   <div class="navigation_link">
-  	<%= link_to 'Go to the question', admin_question_path(@answer.question) %>
+  	<%= link_to t('.go_back'), admin_question_path(@answer.question) %>
   </div>
 </p>

@@ -1,7 +1,7 @@
 <table>
   <thead>
     <tr>
-      <th colspan="5"><h2>Questions list</h2></th>
+      <th colspan="5"><h2><%= t('.header') %></h2></th>
     </tr>
   </thead>
 
@@ -10,12 +10,12 @@
       <tr>
         <td><%= index %></td>
         <td><%= question.body %></td>
-        <td><%= link_to 'Show', admin_question_path(question) %></td>
-        <td><%= link_to 'Edit', edit_admin_question_path(question) %></td>
-        <td><%= link_to 'Delete', 
+        <td><%= link_to t('.show'), admin_question_path(question) %></td>
+        <td><%= link_to t('.edit'), edit_admin_question_path(question) %></td>
+        <td><%= link_to t('.delete'), 
                         admin_question_path(question), 
                         method: :delete, 
-                        data: { confirm: 'Are you sure?' } %></td>
+                        data: { confirm: t('.confirm') } %></td>
       </tr>
     <% end %>
   </tbody>

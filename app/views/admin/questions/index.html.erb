@@ -4,9 +4,9 @@
 
 <p>
   <div class="navigation_link">
-    <%= link_to 'New question', new_admin_test_question_path(@test) %>
+    <%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
   </div>
   <div class="navigation_link">
-    <%= link_to 'Go back to the test', admin_tests_path %>
+    <%= link_to t('.go_back'), admin_test_path(@test) %>
   </div>
 </p>

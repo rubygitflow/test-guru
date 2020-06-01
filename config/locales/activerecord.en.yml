@@ -1,0 +1,24 @@
+en:
+  activerecord:
+    models:
+      test: 'Test'
+      question: 'Question'
+      answer: 'Answer'
+
+    attributes:
+      test:
+        category: 'Category'
+        author: 'Author'
+        title: 'Title'
+        level: 'Level'
+        questions: "Questions"
+        actions: 'Actions'
+      question:
+        body: 'Body'
+      answer:
+        body: 'Body'
+        correct: 'Correct'
+
+    errors:
+      messages:
+        blank: "can't be blank"

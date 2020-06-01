@@ -15,7 +15,7 @@ class Admin::AnswersController < Admin::BaseController
     @answer = @question.answers.new(answer_params)
 
     if @answer.save
-      flash[:notice] = 'Answer was successfully created.'
+      flash[:notice] = t('.success')
       redirect_to admin_answer_path(@answer)
     else
       render :new
@@ -24,7 +24,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def destroy
     @answer.destroy
-    flash[:notice] = 'Answer was successfully destroyed.'
+    flash[:notice] = t('.success')
     redirect_to admin_question_path(@answer.question)
   end
 
@@ -33,7 +33,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def update
     if @answer.update(answer_params)
-      flash[:notice] = 'Answer was successfully updated.'
+      flash[:notice] = t('.success')
       redirect_to admin_answer_path(@answer)
     else
       render :edit

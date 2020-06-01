@@ -23,7 +23,7 @@ class Admin::QuestionsController < Admin::BaseController
     @question = @test.questions.new(question_params)
     # https://api.rubyonrails.org/classes/ActiveModel/Errors.html
     if @question.save
-      flash[:notice] = 'Question was successfully created.'
+      flash[:notice] = t('.success')
       # https://apidock.com/rails/v2.3.8/ActionController/Base/redirect_to
       redirect_to admin_test_questions_path(@question.test)
     else
@@ -33,7 +33,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def destroy
     @question.destroy
-    flash[:notice] = 'Question was successfully destroyed.'
+    flash[:notice] = t('.success')
     # https://apidock.com/rails/v2.3.8/ActionController/Base/redirect_to
     redirect_to admin_test_path(@question.test)
   end
@@ -44,7 +44,7 @@ class Admin::QuestionsController < Admin::BaseController
   def update
     if @question.update(question_params)
       # https://api.rubyonrails.org/classes/ActionDispatch/Flash.html
-      flash[:notice] = 'Question was successfully updated.'
+      flash[:notice] = t('.success')
       redirect_to admin_question_path(@question)
     else
       # https://apidock.com/rails/ActionController/Base/render

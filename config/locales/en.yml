@@ -1,33 +1,176 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  hello: 'Hello world'
+
+  tests:
+    index:
+      header: 'Tricky Tests'
+      category: 'Category'
+      title: 'Title'
+      level: 'Level'
+      author: 'Author'
+      count_questions: 'Count of questions'
+      actions: 'Actions'
+      start: 'Start'
+
+  admin:
+    tests:
+      index:
+        header: 'Tests'
+        category: 'Category'
+        title: 'Title'
+        level: 'Level'
+        author: 'Author'
+        count_questions: 'Count of questions'
+        actions: 'Actions'
+        start: 'Start'
+        new_test: 'New test'
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+        confirm: 'Are you sure?'
+      create:
+        success: 'Test was successfully created.'
+      update:
+        success: 'Test was successfully updated.'
+      destroy:
+        success: 'Test was successfully destroyed.'
+      show:
+        header: 'Test'
+        category: 'Category:'
+        title: 'Title:'
+        level: 'Level:'
+        author: 'Author:'
+        edit: 'Edit'
+        go_back: 'Go to the list'
+        go_forward: 'Show questions'
+      edit:
+        show: 'Show'
+        go_back: 'Go to the list'
+        edit: 'Edit test:'
+      new:
+        go_back: 'Go to the list'
+        create: 'Create a test'
+    questions:
+      create:
+        success: 'Question was successfully created.'
+      update:
+        success: 'Question was successfully updated.'
+      destroy:
+        success: 'Question was successfully destroyed.'
+      index:
+        header: 'Questions list'
+        new_question: 'New question'
+        go_back: 'Go back to the test'
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+        confirm: 'Are you sure?'
+      test_title:
+        test_caption: 'Test:'
+      edit:
+        show: 'Show'
+        go_back: 'Go to the question list'
+        edit: 'Edit question:'
+      show:
+        header: 'Question:'
+        edit: 'Edit'
+        go_back: 'Go to the question list'
+      new:
+        go_back: 'Go to the question list'
+        create: 'Create a question'
+    answers:
+      create:
+        success: 'Answer was successfully created.'
+      update:
+        success: 'Answer was successfully updated.'
+      destroy:
+        success: 'Answer was successfully destroyed.'
+      index:
+        header: 'Answers list'
+        new_answer: 'New answer'
+      answer:
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+        confirm: 'Are you sure?'
+      question_body:
+        question_caption: 'Question:'
+      edit:
+        show: 'Show'
+        go_back: 'Go to the question'
+        edit: 'Edit answer:'
+      show:
+        header: 'Answer:'
+        correct: 'Correctness:'
+        edit: 'Edit'
+        go_back: 'Go to the question'
+      new:
+        go_back: 'Go to the question'
+        create: 'Create an answer'
+    nav:
+      header: 'TestGuru Admin Panel'
+      welcome_html: 'Welcome, %{name} Guru'
+      logout: 'Logout'
+
+  helpers:
+    submit:
+      test:
+        create: 'Create new test'
+        update: 'Update test:'
+      question:
+        create: 'Create new question'
+        update: 'Update question:'
+      answer:
+        create: 'Create new answer'
+        update: 'Update answer:'
+      test_passage:  
+        update: 'Next'
+        show: 'Next'
+    select:
+      prompt: 'Select!'
+    label:
+      test:
+        title: 'Title'
+        level: 'Level'
+        category_id: 'Category'
+      question:
+        body: 'Body'
+      answer:
+        body: 'Body '
+        correct: 'Correct'
+
+  layouts:
+    nav:
+      header: 'Test Guru'
+      welcome_html: 'Welcome, %{name} Guru.'
+      logout: 'Logout'
+      registration: 'Registration'
+      login: 'Log In'
+    footer: 
+      author: 'Nikolai Bocharov'
+      title: 'Tests for all occasions.'
+      about: 'Educational project from the online school'
+    admin:
+      head: 'Admin panel'
+
+  tests_mailer:
+    completed_test:
+      subject: 'You just completed the TestGuru test!'
+
+  shared:
+    errors:
+      header:
+        one: '%{count} error detected'
+        other: '%{count} errors detected'
+
+  test_passages:
+    result:
+      header: 'The "%{title}" Test was completed!'
+      title: 'Correct answers:'
+      passed_message: 'Congratulation! Test was passed.'
+      failed_message: 'Unfortunately, the test was failed!'
+      go_back: 'Go back to the tests'
+    show:
+      header: 'Pass the Test:'
+      progress: 'Question'
+

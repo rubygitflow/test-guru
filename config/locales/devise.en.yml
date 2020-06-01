@@ -6,6 +6,8 @@ en:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+      new:
+        resend_confirmation_instructions: "Resend confirmation instructions"
     failure:
       already_authenticated: "You are already signed in."
       inactive: "Your account is not activated yet."
@@ -19,13 +21,29 @@ en:
     mailer:
       confirmation_instructions:
         subject: "Confirmation instructions"
+        action: 'Confirm my account'
+        greeting: Welcome, %{recipient}!
+        instruction: 'You can confirm your account email through the link below:'
       reset_password_instructions:
+        action: Change my password
+        greeting: Hello, %{recipient}!
+        instruction: 'Someone has requested a link to change your password. You can do this through the link below.'
+        instruction_2: If you didn't request this, please ignore this email.
+        instruction_3: Your password won't change until you access the link above and create a new one.
         subject: "Reset password instructions"
       unlock_instructions:
+        action: Unlock my account
+        greeting: Hello, %{recipient}!
+        instruction: 'Click the link below to unlock your account:'
+        message: Your account has been locked due to an excessive number of unsuccessful sign in attempts.
         subject: "Unlock instructions"
       email_changed:
         subject: "Email Changed"
+        message: We're contacting you to notify you that your email is being changed to %{email}.
+        greeting: Hello, %{recipient}!
       password_change:
+        greeting: Hello, %{recipient}!
+        message: We're contacting you to notify you that your password has been changed.
         subject: "Password Changed"
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
@@ -45,14 +63,41 @@ en:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirmation link to confirm your new email address."
       updated: "Your account has been updated successfully."
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again"
+      new:
+        sign_up: "Sign up"
+        head: "Become a Guru"
+      edit:
+        are_you_sure: Are you sure?
+        cancel_my_account: Cancel my account
+        currently_waiting_confirmation_for_email: 'Currently waiting confirmation for: %{email}'
+        leave_blank_if_you_don_t_want_to_change_it: leave blank if you don't want to change it
+        title: Edit %{resource}
+        unhappy: unhappy
+        update: Update
+        we_need_your_current_password_to_confirm_your_changes: we need your current password to confirm your changes
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
+      new:
+        sign_in: "Log in"
+        head: "Become a Guru"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+    shared:
+      links:
+        back: Назад
+        didn_t_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
+        didn_t_receive_unlock_instructions: "Didn't receive unlock instructions?"
+        forgot_your_password: "Forgot your password?"
+        sign_in: "Log in"
+        sign_in_with_provider: 'Sign in with %{provider}'
+        sign_up: "Sign up"
+      minimum_password_length:
+        one: "(%{count} character minimum)"
+        other: "(%{count} characters minimum)"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"

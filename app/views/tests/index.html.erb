@@ -1,15 +1,15 @@
-<h1>Tests</h1>
+<h1><%= t('.header') %></h1>
 
 <table>
   <thead>
   <tr>
     <th>№</th>
-    <th>Category</th>
-    <th>Title</th>
-    <th>Level</th>
-    <th>Author</th>
-    <th>Count of questions</th>
-    <th>Actions</th>
+    <th><%= t('.category') %></th>
+    <th><%= t('.title') %></th>
+    <th><%= t('.level') %></th>
+    <th><%= t('.author') %></th>
+    <th><%= t('.count_questions') %></th>
+    <th><%= t('.actions') %></th>
   </tr>
   </thead>
 
@@ -22,7 +22,7 @@
         <td><%= test.level %></td>
         <td><%= test.author.email %></td>
         <td><%= test.questions.size %></td>
-        <td><%= button_to 'Start', start_test_path(test) %></td>
+        <td><%= button_to t('.start'), start_test_path(test) %></td>
       </tr>
     <% end %>
   </tbody>
