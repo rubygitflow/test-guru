@@ -1,8 +1,7 @@
 <% if resource.errors.any? %>
   <p>
     <div class="error_list_message">
-      <%= resource.errors.count %>
-      <%= resource.errors.count > 1 ? "errors" : 'error' %> detected:
+      <%= t('.header', count: resource.errors.count) %>:
     </div> 
     <ul>
       <% resource.errors.full_messages.each do |message| %>

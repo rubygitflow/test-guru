@@ -1,15 +1,15 @@
-<h1>Tests</h1>
+<h1><%= t('.header') %></h1>
 
 <table>
   <thead>
   <tr>
     <th>№</th>
-    <th>Category</th>
-    <th>Title</th>
-    <th>Level</th>
-    <th>Author</th>
-    <th>Count of questions</th>
-    <th colspan="4">Actions</th>
+    <th><%= t('.category') %></th>
+    <th><%= t('.title') %></th>
+    <th><%= t('.level') %></th>
+    <th><%= t('.author') %></th>
+    <th><%= t('.count_questions') %></th>
+    <th colspan="4"><%= t('.actions') %></th>
   </tr>
   </thead>
 
@@ -23,14 +23,14 @@
         <td><%= test.author.email %></td>
         <td><%= link_to "#{test.questions.size}", 
                         admin_test_questions_path(test) %></td>
-        <td><%= link_to 'Show', admin_test_path(test) %></td>
-        <td><%= link_to 'Edit', edit_admin_test_path(test) %></td>
-        <td><%= link_to 'Delete', 
+        <td><%= link_to t('.show'), admin_test_path(test) %></td>
+        <td><%= link_to t('.edit'), edit_admin_test_path(test) %></td>
+        <td><%= link_to t('.delete'), 
                         admin_test_path(test), 
                         method: :delete, 
-                        data: {confirm: 'Are you sure?'}, 
-                        remote: true%></td>
-        <td><%= button_to 'Start', start_test_path(test) %></td>
+                        data: {confirm: t('.confirm')}, 
+                        remote: true %></td>
+        <td><%= button_to t('.start'), start_test_path(test) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -39,5 +39,5 @@
 <br>
 
 <p>
-  <div class="navigation_link"><%= link_to 'New test', new_admin_test_path %></div>
+  <div class="navigation_link"><%= link_to t('.new_test'), new_admin_test_path %></div>
 </p>

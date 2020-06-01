@@ -1,32 +1,32 @@
-<h1>Test</h1>
+<h1><%= t('.header') %></h1>
 <p>
-  <b>Category:</b>
+  <b><%= t('.category') %></b>
   <%= @test.category.title %>
 </p>
 
 <p>
-  <b>Title:</b>
+  <b><%= t('.title') %></b>
   <%= @test.title %>
 </p>
 
 <p>
-  <b>Level:</b>
+  <b><%= t('.level') %></b>
   <%= @test.level %>
 </p>
 
 <p>
-  <b>Author:</b>
+  <b><%= t('.author') %></b>
   <%= @test.author.email %>
 </p>
 
 <p>
   <div class="navigation_link">
-    <%= link_to 'Edit', edit_admin_test_path(@test) %>
+    <%= link_to t('.edit'), edit_admin_test_path(@test) %>
   </div>
   <div class="navigation_link">
-    <%= link_to 'Show questions', admin_test_questions_path(@test) %>
+    <%= link_to t('.go_forward'), admin_test_questions_path(@test) %>
   </div>
   <div class="navigation_link">
-    <%= link_to 'Go to the list', admin_tests_path %>
+    <%= link_to t('.go_back'), admin_tests_path %>
   </div>
 </p>

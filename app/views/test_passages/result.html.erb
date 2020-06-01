@@ -1,16 +1,15 @@
-<h1>Test "<%= @test_passage.test.title %>" was completed.</h1>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
-<h2>
-  Correct answers: 
+<h2><%= t('.title') %>
   <% if success?(@completed_percent) %>
     <div style = "color: green"><%= @completed_percent %>%.</div>
     <br>
-    Congratulation! Test was passed.
+    <%= t('.passed_message') %>
   <% else %>
     <div style = "color: red"><%= @completed_percent %>%.</div>
     <br>
-    Unfortunately, the test was failed!
+    <%= t('.failed_message') %>
   <% end %>
 </h2>
 
-<p><%= link_to 'Back to tests', tests_path %></p>
+<p><%= link_to t('.go_back'), tests_path %></p>

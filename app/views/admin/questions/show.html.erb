@@ -1,7 +1,7 @@
 <%= render 'test_title', test: @test %>
 
 <p>
-  <b class="page_caption">Body of question: </b>
+  <b class="page_caption"><%= t('.header') %></b>
   <div class="question_body"><%= @question.body %></div>
 </p>
 
@@ -9,9 +9,9 @@
 
 <p>
   <div class="navigation_link">
-    <%= link_to 'Edit', edit_admin_question_path(@question) %>
+    <%= link_to t('.edit'), edit_admin_question_path(@question) %>
   </div>
   <div class="navigation_link">
-    <%= link_to 'Go to the test', admin_test_path(@question.test) %>
+    <%= link_to t('.go_back'), admin_test_questions_path(@test) %>
   </div>
 </p>

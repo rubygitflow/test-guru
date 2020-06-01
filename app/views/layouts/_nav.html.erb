@@ -1,16 +1,16 @@
 <div class="header">
   <div class="header_left">
-    <h3><%= link_to 'Test Guru', root_path %></h3>
+    <h3><%= link_to t('.header'), root_path %></h3>
   </div>
 
   <div class="header_right">
     <p class="user_menu">
       <% if user_signed_in? %>
-        <b>Welcome, <%= current_user.name %> Guru</b>
-        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <b><%= t('.welcome_html', name: current_user.name) %></b>
+        <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
       <% else %>
-        <%= link_to 'Log In', new_user_session_path  %>
-        <%= link_to 'Registration', new_user_registration_path  %>
+        <%= link_to t('.login'), new_user_session_path  %>
+        <%= link_to t('.registration'), new_user_registration_path  %>
       <% end %>
     </p>
   </div>
