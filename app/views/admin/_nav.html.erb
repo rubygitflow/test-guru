@@ -1,6 +1,11 @@
 <div class="header navbar navbar-light bg-light">
   <div class="header_left">
-    <div class="title navbar-brand"><%= t('.header') %></div>
+    <div class="title navbar-brand">
+      <%= link_to t('.tests_link'), root_path %>
+      <span class="admin-caption">
+        <%= t('.header') %>
+      </span>   
+    </div>
   </div>
 
   <div class="header_right">

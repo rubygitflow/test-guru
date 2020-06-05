@@ -9,12 +9,12 @@
 </head>
 
 <body>
+  <%= render 'admin/nav' %>
   <div class="container">
-    <%= render 'admin/nav' %>
     <%= render 'shared/flash' %>
 
     <%= yield %>
-    <%= render 'layouts/footer' %>
   </div>
+  <%= render 'layouts/footer' %>
 </body>
 </html>

@@ -108,7 +108,8 @@ en:
         go_back: 'Go to the question'
         create: 'Create an answer'
     nav:
-      header: 'TestGuru Admin Panel'
+      tests_link: 'TestGuru.'
+      header: 'Admin Panel'
       welcome_html: 'Welcome, %{name} Guru'
       logout: 'Logout'
 
@@ -142,6 +143,7 @@ en:
   layouts:
     nav:
       header: 'Test Guru'
+      admin_link: 'Admin Panel'
       welcome_html: 'Welcome, %{name} Guru.'
       logout: 'Logout'
       registration: 'Registration'

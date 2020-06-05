@@ -108,7 +108,8 @@ ru:
         go_back: 'Вернуться к вопросу'
         create: 'Создание ответа'
     nav:
-      header: 'TestGuru. Панель администратора'
+      tests_link: 'TestGuru.'
+      header: 'Панель администратора'
       welcome_html: "Добро пожаловать, Гуру %{name}"
       logout: 'Выйти'
 
@@ -142,6 +143,7 @@ ru:
   layouts:
     nav:
       header: 'Тесты для Guru'
+      admin_link: 'Панель администратора'
       welcome_html: 'Добро пожаловать, Гуру %{name}.'
       logout: 'Выйти'
       registration: 'Зарегистрироваться'

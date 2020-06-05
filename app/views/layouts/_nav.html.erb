@@ -1,6 +1,11 @@
-<nav class="header navbar navbar-light bg-light">
+<div class="header navbar navbar-light bg-light">
   <div class="header_left">
-    <h3><%= link_to t('.header'), root_path, class: 'navbar-brand' %></h3>
+    <div class="title navbar-brand">
+      <%= link_to t('.header'), root_path %>
+      <% if current_user.admin? %>  
+        <%= link_to t('.admin_link'), admin_tests_path, class: 'admin-caption' %>
+      <% end %>      
+    </div>
   </div>
 
   <div class="header_right">
@@ -14,4 +19,4 @@
       <% end %>
     </span>
   </div>
-</nav>
+</div>
