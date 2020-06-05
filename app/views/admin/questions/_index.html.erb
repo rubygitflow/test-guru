@@ -1,4 +1,4 @@
-<table>
+<table class="table table-striped table-borderless">
   <thead>
     <tr>
       <th colspan="5"><h2><%= t('.header') %></h2></th>
@@ -10,12 +10,17 @@
       <tr>
         <td><%= index %></td>
         <td><%= question.body %></td>
-        <td><%= link_to t('.show'), admin_question_path(question) %></td>
-        <td><%= link_to t('.edit'), edit_admin_question_path(question) %></td>
+        <td><%= link_to t('.show'), 
+                        admin_question_path(question), 
+                        class: 'btn btn-outline-primary  btn-sm' %></td>
+        <td><%= link_to t('.edit'), 
+                        edit_admin_question_path(question), 
+                        class: 'btn btn-outline-primary  btn-sm' %></td>
         <td><%= link_to t('.delete'), 
                         admin_question_path(question), 
                         method: :delete, 
-                        data: { confirm: t('.confirm') } %></td>
+                        data: { confirm: t('.confirm') }, 
+                        class: 'btn btn-outline-danger  btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>

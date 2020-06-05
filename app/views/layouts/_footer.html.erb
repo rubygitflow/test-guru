@@ -1,6 +1,10 @@
 <div class="footer">
-  <p><%= current_year %>, <%= t('.author') %>, 
-    <%= github_url('TestGuru', 'https://github.com/rubygitflow/test-guru')%>
-    — <%= t('.title') %></p>
-  <p><%= t('.about') %> <%= thinknetica_url %>.</p>
+  <small class="row">
+    <span class="col text-left"><%= current_year %>, <%= t('.author') %>, 
+      <%= github_url('TestGuru', 'https://github.com/rubygitflow/test-guru')%>
+      — <%= t('.title') %>
+    </span>
+    <span class="col text-right"><%= t('.about') %> <%= thinknetica_url %>.
+    </span>
+  </small>
 </div>

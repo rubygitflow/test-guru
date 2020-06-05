@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= t('.head') %> | TestGuru</title>
+  <title><%= t('.head') %></title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
@@ -9,9 +9,12 @@
 </head>
 
 <body>
-<%= render 'admin/nav' %>
-<%= render 'shared/flash' %>
+  <div class="container">
+    <%= render 'admin/nav' %>
+    <%= render 'shared/flash' %>
 
-<%= yield %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </div>
 </body>
 </html>

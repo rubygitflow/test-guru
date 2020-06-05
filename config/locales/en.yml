@@ -151,7 +151,7 @@ en:
       title: 'Tests for all occasions.'
       about: 'Educational project from the online school'
     admin:
-      head: 'Admin panel'
+      head: 'Admin panel | TestGuru'
 
   tests_mailer:
     completed_test:
@@ -173,4 +173,4 @@ en:
     show:
       header: 'Pass the Test:'
       progress: 'Question'
-
+      next: 'Next'

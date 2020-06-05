@@ -151,7 +151,7 @@ ru:
       title: 'Тесты на все случаи жизни.'
       about: 'Образовательный проект от онлайн школы'
     admin:
-      head: 'Панель администратора'
+      head: 'Панель администратора | TestGuru'
 
   tests_mailer:
     completed_test:
@@ -175,3 +175,4 @@ ru:
     show:
       header: 'Тест:'
       progress: 'Вопрос'
+      next: 'Следующий'

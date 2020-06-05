@@ -3,10 +3,14 @@
 <%= render 'index', questions: @questions, test: @test %>
 
 <p>
-  <div class="navigation_link">
-    <%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
-  </div>
-  <div class="navigation_link">
-    <%= link_to t('.go_back'), admin_test_path(@test) %>
-  </div>
+  <span class="navigation_link">
+    <%= link_to t('.new_question'), 
+                new_admin_test_question_path(@test), 
+                class: 'btn btn-sm' %>
+  </span>|
+  <span class="navigation_link">
+    <%= link_to t('.go_back'), 
+                admin_test_path(@test), 
+                class: 'btn btn-sm' %>
+  </span>
 </p>
