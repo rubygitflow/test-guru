@@ -10,10 +10,14 @@
 </p>
 
 <p>
-  <div class="navigation_link">
-  	<%= link_to t('.edit'), edit_admin_answer_path(@answer) %>
-  </div>
-  <div class="navigation_link">
-  	<%= link_to t('.go_back'), admin_question_path(@answer.question) %>
-  </div>
+  <span class="navigation_link">
+  	<%= link_to t('.edit'), 
+                edit_admin_answer_path(@answer), 
+                class: 'btn btn-sm' %>
+  </span>|
+  <span class="navigation_link">
+  	<%= link_to t('.go_back'), 
+                admin_question_path(@answer.question), 
+                class: 'btn btn-sm' %>
+  </span>
 </p>

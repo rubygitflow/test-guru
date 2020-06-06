@@ -1,10 +1,15 @@
-<div class="header">
+<div class="header navbar navbar-light bg-light">
   <div class="header_left">
-    <h3><%= link_to t('.header'), root_path %></h3>
+    <div class="title navbar-brand">
+      <%= link_to t('.header'), root_path %>
+      <% if current_user.admin? %>  
+        <%= link_to t('.admin_link'), admin_tests_path, class: 'admin-caption' %>
+      <% end %>      
+    </div>
   </div>
 
   <div class="header_right">
-    <p class="user_menu">
+    <span class="user_menu navbar-text">
       <% if user_signed_in? %>
         <b><%= t('.welcome_html', name: current_user.name) %></b>
         <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
@@ -12,6 +17,6 @@
         <%= link_to t('.login'), new_user_session_path  %>
         <%= link_to t('.registration'), new_user_registration_path  %>
       <% end %>
-    </p>
+    </span>
   </div>
 </div>

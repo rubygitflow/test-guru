@@ -1,4 +1,4 @@
-<h1><%= t('.header') %></h1>
+<h1 class="page_caption mt-3"><%= t('.header') %></h1>
 <p>
   <b><%= t('.category') %></b>
   <%= @test.category.title %>
@@ -20,13 +20,19 @@
 </p>
 
 <p>
-  <div class="navigation_link">
-    <%= link_to t('.edit'), edit_admin_test_path(@test) %>
-  </div>
-  <div class="navigation_link">
-    <%= link_to t('.go_forward'), admin_test_questions_path(@test) %>
-  </div>
-  <div class="navigation_link">
-    <%= link_to t('.go_back'), admin_tests_path %>
-  </div>
+  <span class="navigation_link">
+    <%= link_to t('.edit'), 
+                edit_admin_test_path(@test), 
+                class: 'btn btn-sm' %>
+  </span>|
+  <span class="navigation_link">
+    <%= link_to t('.go_forward'), 
+                admin_test_questions_path(@test), 
+                class: 'btn btn-sm' %>
+  </span>|
+  <span class="navigation_link">
+    <%= link_to t('.go_back'), 
+                admin_tests_path, 
+                class: 'btn btn-sm' %>
+  </span>
 </p>

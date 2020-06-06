@@ -108,7 +108,8 @@ en:
         go_back: 'Go to the question'
         create: 'Create an answer'
     nav:
-      header: 'TestGuru Admin Panel'
+      tests_link: 'TestGuru.'
+      header: 'Admin Panel'
       welcome_html: 'Welcome, %{name} Guru'
       logout: 'Logout'
 
@@ -142,6 +143,7 @@ en:
   layouts:
     nav:
       header: 'Test Guru'
+      admin_link: 'Admin Panel'
       welcome_html: 'Welcome, %{name} Guru.'
       logout: 'Logout'
       registration: 'Registration'
@@ -151,7 +153,7 @@ en:
       title: 'Tests for all occasions.'
       about: 'Educational project from the online school'
     admin:
-      head: 'Admin panel'
+      head: 'Admin panel | TestGuru'
 
   tests_mailer:
     completed_test:
@@ -173,4 +175,4 @@ en:
     show:
       header: 'Pass the Test:'
       progress: 'Question'
-
+      next: 'Next'

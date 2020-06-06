@@ -1,10 +1,16 @@
-<h2 class="page_caption"><%= test_header(@test) %></h2>
+<h1 class="page_caption mt-3"><%= test_header(@test) %></h1>
 
 <%= render 'form', test: @test %>
 
 <p>
-  <div class="navigation_link"><%= link_to t('.show'), admin_test_path(@test) %></div>
-  <div class="navigation_link">
-    <%= link_to t('.go_back'), admin_tests_path %>
-  </div>
+  <span class="navigation_link">
+    <%= link_to t('.show'), 
+                admin_test_path(@test), 
+                class: 'btn btn-sm' %>
+  </span>|
+  <span class="navigation_link">
+    <%= link_to t('.go_back'), 
+                admin_tests_path, 
+                class: 'btn btn-sm' %>
+  </span>
 </p>

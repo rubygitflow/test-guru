@@ -8,10 +8,14 @@
 <%= render 'admin/answers/index', answers: @question.answers, question: @question %>
 
 <p>
-  <div class="navigation_link">
-    <%= link_to t('.edit'), edit_admin_question_path(@question) %>
-  </div>
-  <div class="navigation_link">
-    <%= link_to t('.go_back'), admin_test_questions_path(@test) %>
-  </div>
+  <span class="navigation_link">
+    <%= link_to t('.edit'), 
+                edit_admin_question_path(@question), 
+                class: 'btn btn-sm' %>
+  </span>|
+  <span class="navigation_link">
+    <%= link_to t('.go_back'), 
+                admin_test_questions_path(@test), 
+                class: 'btn btn-sm' %>
+  </span>
 </p>

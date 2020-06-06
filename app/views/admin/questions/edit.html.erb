@@ -5,8 +5,14 @@
 <%= render 'form', question: @question %>
 
 <p>
-  <div class="navigation_link"><%= link_to t('.show'), admin_question_path(@question) %></div>
-  <div class="navigation_link">
-    <%= link_to t('.go_back'), admin_test_questions_path(@question.test) %>
-  </div>
+  <span class="navigation_link">
+    <%= link_to t('.show'), 
+                admin_question_path(@question), 
+                class: 'btn btn-sm' %>
+  </span>|
+  <span class="navigation_link">
+    <%= link_to t('.go_back'), 
+                admin_test_questions_path(@question.test), 
+                class: 'btn btn-sm' %>
+  </span>
 </p>
