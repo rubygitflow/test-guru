@@ -112,7 +112,11 @@ en:
       header: 'Admin Panel'
       welcome_html: 'Welcome, %{name} Guru'
       logout: 'Logout'
-
+    gists:
+      index:
+        question: "Question"
+        user: "User"
+        
   helpers:
     submit:
       test:

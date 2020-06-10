@@ -112,7 +112,11 @@ ru:
       header: 'Панель администратора'
       welcome_html: "Добро пожаловать, Гуру %{name}"
       logout: 'Выйти'
-
+    gists:
+      index:
+        question: "Вопрос"
+        user: "Пользователь"
+        
   helpers:
     submit:
       test:

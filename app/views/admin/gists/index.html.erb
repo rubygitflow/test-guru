@@ -1,0 +1,15 @@
+<h1 class="page_caption mt-3">Gists</h1>
+
+<table class="table table-striped table-borderless">
+  <thead>
+  <tr>
+    <th scope="col"><%= t('.question') %></th>
+    <th scope="col">Gist URL</th>
+    <th scope="col"><%= t('.user') %></th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <%= render @gists %>
+  </tbody>
+</table>
