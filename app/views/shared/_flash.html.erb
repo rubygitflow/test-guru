@@ -1,5 +1,5 @@
 <% flash.each do |key, message| %>
   <%= content_tag :div, message, class: "flash #{key} alert-dismissible fade show", role: 'alert' do %>
-    <%= message %>
+    <%= message.html_safe %>
   <% end %>
 <% end %>
