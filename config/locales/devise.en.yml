@@ -81,6 +81,7 @@ en:
       already_signed_out: "Signed out successfully."
       new:
         sign_in: "Log in"
+        after_sign_in_hello: "We are glad to welcome you to the professional development system TestGuru"
         head: "Become a Guru"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
