@@ -112,7 +112,11 @@ ru:
       header: 'Панель администратора'
       welcome_html: "Добро пожаловать, Гуру %{name}"
       logout: 'Выйти'
-
+    gists:
+      index:
+        question: "Вопрос"
+        user: "Пользователь"
+        
   helpers:
     submit:
       test:
@@ -177,4 +181,12 @@ ru:
     show:
       header: 'Тест:'
       progress: 'Вопрос'
+      post_gist: 'Отправить вопрос в Gist'
       next: 'Следующий'
+    gist:
+      success: "<a href='%{url}' target='_blank'>Gist</a> успешно сохранен!"
+      failure: "Во время сохранения gist произошла ошибка"
+
+
+  gist_question_service:
+    description: "Вопросы по тесту %{title} из TestGuru"

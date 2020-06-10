@@ -112,7 +112,11 @@ en:
       header: 'Admin Panel'
       welcome_html: 'Welcome, %{name} Guru'
       logout: 'Logout'
-
+    gists:
+      index:
+        question: "Question"
+        user: "User"
+        
   helpers:
     submit:
       test:
@@ -175,4 +179,11 @@ en:
     show:
       header: 'Pass the Test:'
       progress: 'Question'
+      post_gist: 'Gist Question'
       next: 'Next'
+    gist:
+      success: "<a href='%{url}' target='_blank'>Gist</a> was successfully created!"
+      failure: "An error occurred while saving gist"
+
+  gist_question_service:
+    description: "A question about %{title} from TestGuru"

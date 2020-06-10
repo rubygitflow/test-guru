@@ -2,9 +2,11 @@
   <div class="header_left">
     <div class="title navbar-brand">
       <%= link_to t('.header'), root_path %>
-      <% if current_user.admin? %>  
-        <%= link_to t('.admin_link'), admin_tests_path, class: 'admin-caption' %>
-      <% end %>      
+      <% if user_signed_in? %>
+        <% if current_user.admin? %>  
+          <%= link_to t('.admin_link'), admin_tests_path, class: 'admin-caption' %>
+        <% end %>   
+      <% end %>   
     </div>
   </div>
 

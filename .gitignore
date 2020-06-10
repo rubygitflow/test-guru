@@ -31,3 +31,5 @@
 
 # Ignore all yarn dependencies
 /node_modules/*
+
+.env*.local
