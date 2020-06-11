@@ -22,3 +22,10 @@ ru:
     errors:
       messages:
         blank: 'не может быть пустым'
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: Пароль не совпадает
+            email:
+              taken: Адрес электронной почты уже занят
