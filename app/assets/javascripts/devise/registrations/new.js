@@ -19,8 +19,10 @@ function confirmUserPassword() {
 
     if (!this.value || !passwordInput.value) {
         this.parentNode.querySelector('.octicon-check').classList.add('hide');
-        this.parentNode.querySelector('.octicon-alert').classList.add('hide')
-    } else if (this.value === passwordInput.value) {
+        this.parentNode.querySelector('.octicon-alert').classList.add('hide');
+        return
+    } 
+    if (this.value === passwordInput.value) {
         this.parentNode.querySelector('.octicon-check').classList.remove('hide');
         this.parentNode.querySelector('.octicon-alert').classList.add('hide')
     } else {
