@@ -26,6 +26,7 @@ ru:
         new_test: 'Добавить тест'
         show: 'Показать'
         edit: 'Редактировать'
+        cancel: 'Отменить'
         delete: 'Удалить'
         confirm: 'Вы уверены?'
       create:
@@ -50,6 +51,10 @@ ru:
       new:
         go_back: 'Вернуться к списку'
         create: 'Создание теста'
+      form_inline:
+        submit: "Изменить"
+      update_inline:
+        success: 'Тест успешно переименован.'
     questions:
       create:
         success: 'Вопрос успешно создан.'
@@ -170,6 +175,8 @@ ru:
         many: 'Обнаружено %{count} ошибок'
         one: 'Обнаружена %{count} ошибка'
         other: 'Обнаружено %{count} ошибки'
+      edit: 'Редактировать'
+      cancel: 'Отменить'
 
   test_passages:
     result:
