@@ -1,9 +1,15 @@
 <h1 class="mt-3"><%= t('.header') %> <%= @test_passage.test.title %></h1>
 
+
+
 <div class="mt-3"><%= t('.progress') %> 
-  <%= @test_passage.current_question_number %>
-  /
-  <%= @test_passage.test.questions.size %>  
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: <%= progress_bar_width(@test_passage) %>%;" aria-valuenow="<%= progress_bar_width(@test_passage) %>" aria-valuemin="0" aria-valuemax="100">
+      <%= @test_passage.current_question_number %>
+      /
+      <%= @test_passage.test.questions.size %>  
+    </div>
+  </div>
 </div>
 <div class="card border-primary">
   <div class="card-body">
