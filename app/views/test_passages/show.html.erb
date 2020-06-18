@@ -1,17 +1,12 @@
 <h1 class="mt-3"><%= t('.header') %> <%= @test_passage.test.title %></h1>
 
 
-
 <div class="mt-3"><%= t('.progress') %> 
-  <div class="progress">
-    <div class="progress-bar" role="progressbar" style="width: <%= progress_bar_width(@test_passage) %>%;" aria-valuenow="<%= progress_bar_width(@test_passage) %>" aria-valuemin="0" aria-valuemax="100">
-      <%= @test_passage.current_question_number %>
-      /
-      <%= @test_passage.test.questions.size %>  
-    </div>
-  </div>
+  <%= @test_passage.current_question_number %>
+  /
+  <%= @test_passage.test.questions.size %>  
 </div>
-<div class="card border-primary">
+<div class="card border-primary mb-3">
   <div class="card-body">
     <h3><%= @test_passage.current_question.body %></h3>
 
@@ -31,8 +26,16 @@
         <p><%= link_to t('.post_gist'), gist_test_passage_path(@test_passage), method: :post %></p>
 
 
-        <%= form.submit t('.next'), class: 'btn btn-primary mt-4' %>
+        <%= form.submit t('.next'), 
+          class: 'btn btn-primary mt-4 progress-button'%>
       </div>
     <% end %>
+  </div>
+  <div class="mt-3"> 
+    <div id="progress">
+      <div id="bar" data-current-question="<%= @test_passage.current_question_number %>"
+        data-questions-size="<%= @test_passage.test.questions.size %>">  
+      </div>
+    </div>
   </div>
 </div>
