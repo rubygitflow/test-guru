@@ -1,3 +1,3 @@
-if Rails.env = 'development'
+if Rails.env == 'development'
   Dotenv.require_keys('GITHUB_TOKEN')
 end
