@@ -5,8 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-users = User.create!([{name: "admin", email: "admin@gmail.com"}, 
-                      {name: "user", email: "user@gmail.com"}])
+users = User.create!([{name: "Admin", email: "admin@gmail.com", 
+                       password: '123456', type: "Admin"
+                       last_name: 'Lastmin'}, 
+                      {name: "User", email: "user@gmail.com", 
+                       password: '123456', type: "User"
+                       last_name: 'Laster'}])
 
 category_sections = %w[Ruby RoR JavaScript React HTML CSS]
 categories = []
@@ -16,14 +20,14 @@ end
 
 
 tests_data = [
-  {title: 'Ruby beginner', level: 1, category: categories[0], author: users[0]},
-  {title: 'Ruby master', level: 3, category:  categories[0], author: users[0]},
-  {title: 'RoR beginner', level: 1, category:  categories[1], author: users[0]},
-  {title: 'RoR master', level: 3, category:  categories[1], author: users[0]},
-  {title: 'JavaScript programmer', level: 2, category:  categories[2], author: users[0]},
-  {title: 'React programmer', level: 3, category:  categories[2], author: users[0]},
-  {title: 'HTML coder', level: 1, category:  categories[3], author: users[0]},
-  {title: 'CSS designer', level: 2, category:  categories[4], author: users[0]}
+  {title: 'Ruby beginner', level: 1, category_id: categories[0].id, author_id: users[0].id},
+  {title: 'Ruby master', level: 3, category_id:  categories[0].id, author_id: users[0].id},
+  {title: 'RoR beginner', level: 1, category_id:  categories[1].id, author_id: users[0].id},
+  {title: 'RoR master', level: 3, category_id:  categories[1].id, author_id: users[0].id},
+  {title: 'JavaScript programmer', level: 2, category_id:  categories[2].id, author_id: users[0].id},
+  {title: 'React programmer', level: 3, category_id:  categories[2].id, author_id: users[0].id},
+  {title: 'HTML coder', level: 1, category_id:  categories[3].id, author_id: users[0].id},
+  {title: 'CSS designer', level: 2, category_id:  categories[4].id, author_id: users[0].id}
 ]
 
 tests = []
