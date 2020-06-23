@@ -1,5 +1,9 @@
-<% if resource.errors.any? %>
-  <p>
+<% if resource.present? && resource.errors.any? %>
+  <%= content_tag :div, 
+    class: 'resource-errors', 
+    data: {resource_id: resource.id, 
+      edit_cap: t('.edit'), 
+      cancel_cap: t('.cancel')} do %>
     <div class="error_list_message">
       <%= t('.header', count: resource.errors.count) %>:
     </div> 
@@ -8,6 +12,6 @@
         <li><div class="error_list_message"><%= message %></div></li>
       <% end %>
     </ul>
-  </p>
+  <% end %>
   <br>
 <% end %>

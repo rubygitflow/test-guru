@@ -5,3 +5,17 @@
 .hide {
   display: none;
 }
+
+#progress {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+}
+
+#bar {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: #0000ff;
+}

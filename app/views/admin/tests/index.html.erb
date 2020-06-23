@@ -1,45 +1,60 @@
 <h1 class="page_caption mt-3"><%= t('.header') %></h1>
 
+<%= render 'shared/errors', resource: @test %>
+
 <table class="table table-striped table-borderless">
   <thead>
   <tr>
-    <th>№</th>
-    <th><%= t('.category') %></th>
-    <th  class="sort-by-title pointer">
+    <th class="text-center">№</th>
+    <th class="text-center"><%= t('.category') %></th>
+    <th  class="text-center sort-by-title pointer">
       <%= t('.title') %>
       <%= octicon 'arrow-up', class: 'text-success hide' %>
       <%= octicon 'arrow-down', class: 'text-success hide' %>
     </th>
-    <th><%= t('.level') %></th>
-    <th><%= t('.author') %></th>
-    <th><%= t('.count_questions') %></th>
-    <th colspan="3"><%= t('.actions') %></th>
+    <th class="text-center"><%= t('.level') %></th>
+    <th class="text-center"><%= t('.author') %></th>
+    <th class="text-center"><%= t('.count_questions') %></th>
+    <th class="text-center" colspan="3"><%= t('.actions') %></th>
   </tr>
   </thead>
 
   <tbody>
     <% @tests.each.with_index(1) do |test, index| %>
       <tr>
-        <td><%= index %></td>
-        <td><%= test.category.title %></td>
-        <td><%= test.title %></td>
-        <td><%= test.level %></td>
-        <td><%= test.author.email %></td>
-        <td><%= link_to "#{test.questions.size}", 
-                        admin_test_questions_path(test), 
-                        class: 'btn btn-outline-secondary  btn-sm  btn-block' %></td>
-        <td><%= link_to t('.show'), 
-                        admin_test_path(test), 
-                        class: 'btn btn-outline-primary  btn-sm' %></td>
-        <td><%= link_to t('.edit'),
-                        edit_admin_test_path(test), 
-                        class: 'btn btn-outline-primary  btn-sm' %></td>
-        <td><%= link_to t('.delete'), 
-                        admin_test_path(test), 
-                        method: :delete, 
-                        data: {confirm: t('.confirm')}, 
-                        remote: true , 
-                        class: 'btn btn-outline-danger  btn-sm' %></td>
+        <td class="align-middle"><%= index %></td>
+        <td class="align-middle"><%= test.category.title %></td>
+        <td class="align-middle">
+          <%= content_tag :span, 
+            test.title, 
+            class: 'test-title', 
+            data: {test_id: test.id} %>
+          <%= render 'form_inline', test: test == @test ? @test : test %>
+        </td>
+        <td class="align-middle"><%= test.level %></td>
+        <td class="align-middle"><%= test.author.email %></td>
+        <td class="align-middle"><%= link_to "#{test.questions.size}", 
+          admin_test_questions_path(test), 
+          class: 'btn btn-outline-secondary  btn-sm  btn-block' %>
+        </td>
+        <td class="align-middle"><%= link_to t('.show'), 
+          admin_test_path(test), 
+          class: 'btn btn-outline-primary  btn-sm' %>
+        </td>
+        <td class="align-middle"><%= link_to t('.edit'),
+          edit_admin_test_path(test), 
+          data: {test_id: test.id, 
+            edit_cap: t('.edit'), 
+            cancel_cap: t('.cancel')},
+          class: 'btn btn-outline-primary  btn-sm form-inline-link' %>
+        </td>
+        <td class="align-middle"><%= link_to t('.delete'), 
+          admin_test_path(test), 
+          method: :delete, 
+          data: {confirm: t('.confirm')}, 
+          remote: true , 
+          class: 'btn btn-outline-danger  btn-sm' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
