@@ -40,10 +40,3 @@ test:
   timeout: 5000
   username: dekan
   password: 
-
-production:
-  adapter: postgresql
-  database: test_guru_production
-  pool: 5
-  timeout: 5000
-  
