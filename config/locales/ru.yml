@@ -121,7 +121,16 @@ ru:
       index:
         question: "Вопрос"
         user: "Пользователь"
-        
+
+  feedbacks:
+    new:
+      header: "Введите текст сообщения:"
+      go_back: 'Вернуться к списку тестов'
+    create:
+      success: "Сообщение успешно отправлено."
+      error: "Что-то пошло не так. Повторите ещё раз."
+       
+       
   helpers:
     submit:
       test:
@@ -136,6 +145,8 @@ ru:
       test_passage:  
         update: 'Далее'
         show: 'Далее'
+      feedback:
+        create: "Отправить"
     select:
       prompt: 'Выберите!'
     label:
@@ -153,6 +164,7 @@ ru:
     nav:
       header: 'Тесты для Guru'
       admin_link: 'Панель администратора'
+      feedback_link: 'Оставить отклик'
       welcome_html: 'Добро пожаловать, Гуру %{name}.'
       logout: 'Выйти'
       registration: 'Зарегистрироваться'

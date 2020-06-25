@@ -1,0 +1,9 @@
+<h2 class="page_caption mt-3"><%= t('.header') %></h2>
+
+<%= render 'form', feedback: @feedback %>
+
+<div class="py-1">
+  <%= link_to t('.go_back'), 
+              tests_path, 
+              class: 'btn btn-light btn-lg btn-block' %>
+</div>

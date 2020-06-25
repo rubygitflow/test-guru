@@ -1,0 +1,11 @@
+<!-- https://apidock.com/rails/ActionView/Helpers/FormHelper/form_with -->
+<%= form_with(model: feedback, local: true) do |form| %>
+
+  <div class="edit_text">
+    <%= form.text_area :body, id: :feedback_body, rows: 7, cols: 80 %>
+  </div>
+
+  <div class="action_button">
+    <%= form.submit %>
+  </div>
+<% end %>

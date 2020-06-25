@@ -121,7 +121,15 @@ en:
       index:
         question: "Question"
         user: "User"
-        
+
+  feedbacks:
+    new:
+      header: "Enter your message:"
+      go_back: 'Go back to the tests'
+    create:
+      success: "Message was successfully sent."
+      error: "Something went wrong. Please try again."
+     
   helpers:
     submit:
       test:
@@ -136,6 +144,8 @@ en:
       test_passage:  
         update: 'Next'
         show: 'Next'
+      feedback:
+        create: "Send"
     select:
       prompt: 'Select!'
     label:
@@ -153,6 +163,7 @@ en:
     nav:
       header: 'Test Guru'
       admin_link: 'Admin Panel'
+      feedback_link: 'Feedback'
       welcome_html: 'Welcome, %{name} Guru.'
       logout: 'Logout'
       registration: 'Registration'
