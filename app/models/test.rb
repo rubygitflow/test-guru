@@ -2,8 +2,8 @@ class Test < ApplicationRecord
   belongs_to :category
   # http://rusrails.ru/active-record-associations#dependent
   # https://guides.rubyonrails.org/association_basics.html
-  has_many :questions, dependent: :destroy
   has_many :test_passages, dependent: :destroy
+  has_many :questions, dependent: :destroy
   has_many :users, through: :test_passages
   belongs_to :author, class_name: "User"
 
