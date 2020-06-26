@@ -126,6 +126,7 @@ ru:
     new:
       header: "Введите текст сообщения:"
       go_back: 'Вернуться к списку тестов'
+      submit: 'Отправить'
     create:
       success: "Сообщение успешно отправлено."
       error: "Что-то пошло не так. Повторите ещё раз."
@@ -145,8 +146,6 @@ ru:
       test_passage:  
         update: 'Далее'
         show: 'Далее'
-      feedback:
-        create: "Отправить"
     select:
       prompt: 'Выберите!'
     label:

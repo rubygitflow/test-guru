@@ -1,23 +1,15 @@
 class FeedbacksController < ApplicationController
-
   def new
-    @feedback = Feedback.new
   end
 
   def create
-    @feedback = Feedback.new(feedback_params)
-    if @feedback.valid?
-      FeedbacksMailer.feedback_message(current_user, @feedback.body).deliver_now
-      flash[:notice] = t('.success')
-    else
+    message = params[:feedback_body]
+    if message.blank?
       flash[:error] = t('.error')
+    else
+      FeedbacksMailer.feedback_message(current_user, message).deliver_now
+      flash[:notice] = t('.success')
     end
     redirect_to new_feedback_url
-  end
-
-  private
-
-  def feedback_params
-    params.require(:feedback).permit(:body)
   end
 end

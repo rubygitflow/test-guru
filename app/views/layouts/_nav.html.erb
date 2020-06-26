@@ -5,11 +5,10 @@
       <% if user_signed_in? %>
         <% if current_user.admin? %>  
           <%= link_to t('.admin_link'), admin_tests_path, class: 'admin-caption' %>
-        <% else %>  
-          <% if action_name != 'new' %> 
-            <%= link_to t('.feedback_link'), new_feedback_path %>
-          <% end %>
         <% end %>   
+        <% if action_name != 'new' %> 
+          <%= link_to t('.feedback_link'), new_feedback_path %>
+        <% end %>
       <% end %>   
     </div>
   </div>

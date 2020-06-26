@@ -126,6 +126,7 @@ en:
     new:
       header: "Enter your message:"
       go_back: 'Go back to the tests'
+      submit: 'Send'
     create:
       success: "Message was successfully sent."
       error: "Something went wrong. Please try again."
@@ -144,8 +145,6 @@ en:
       test_passage:  
         update: 'Next'
         show: 'Next'
-      feedback:
-        create: "Send"
     select:
       prompt: 'Select!'
     label:
