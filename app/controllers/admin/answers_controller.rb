@@ -8,7 +8,6 @@ class Admin::AnswersController < Admin::BaseController
 
   def new
     @answer = @question.answers.new
-    puts "#{@answer.inspect}"
   end
 
   def create

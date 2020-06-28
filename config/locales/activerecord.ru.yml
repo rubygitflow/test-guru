@@ -29,3 +29,8 @@ ru:
               confirmation: Пароль не совпадает
             email:
               taken: Адрес электронной почты уже занят
+      models:
+        test:
+          attributes:
+            author: 
+              required: 'не указан'

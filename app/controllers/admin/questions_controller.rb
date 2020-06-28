@@ -35,7 +35,7 @@ class Admin::QuestionsController < Admin::BaseController
     @question.destroy
     flash[:notice] = t('.success')
     # https://apidock.com/rails/v2.3.8/ActionController/Base/redirect_to
-    redirect_to admin_test_path(@question.test)
+    redirect_to admin_test_questions_path(@question.test)
   end
 
   def edit

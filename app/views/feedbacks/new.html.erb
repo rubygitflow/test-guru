@@ -1,0 +1,18 @@
+<h2 class="page_caption mt-3"><%= t('.header') %></h2>
+
+<%= form_with(url: feedbacks_path, local: true) do |form| %>
+
+  <div class="edit_text">
+    <%= text_area_tag 'feedback_body', nil, rows: 7, cols: 80 %>
+  </div>
+
+  <div class="action_button">
+    <%= form.submit t('.submit') %>
+  </div>
+<% end %>
+
+<div class="py-1">
+  <%= link_to t('.go_back'), 
+              tests_path, 
+              class: 'btn btn-light btn-lg btn-block' %>
+</div>
