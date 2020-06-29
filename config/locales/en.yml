@@ -204,3 +204,10 @@ en:
 
   gist_question_service:
     description: "A question about %{title} from TestGuru"
+
+  models:
+    badge:
+      rule:
+        badge_label_of_first_attempt: 'Successful completion of the test on the first attempt'
+        badge_label_of_level: 'Successful completion of all level tests'
+        badge_label_of_category: 'Successful completion of all tests from the category'

@@ -4,6 +4,7 @@ ru:
       test: 'Тест'
       question: 'Вопрос'
       answer: 'Ответ'
+      badge: 'Знак отличия'    
 
     attributes:
       test:
@@ -18,6 +19,11 @@ ru:
       answer:
         body: 'Текст ответа'
         correct: 'Да/Нет'
+      badge:
+        title: "Название"
+        image_path: "Путь к картинке"
+        rule: "Правило"
+        value: "Значение"
 
     errors:
       messages:

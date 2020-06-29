@@ -208,3 +208,10 @@ ru:
 
   gist_question_service:
     description: "Вопросы по тесту %{title} из TestGuru"
+
+  models:
+    badge:
+      rule:
+        badge_label_of_first_attempt: 'Успешное прохождение теста с первой попытки'
+        badge_label_of_level: 'Успешное прохождение всех тестов уровня'
+        badge_label_of_category: 'Успешное прохождение всех тестов из категории'
