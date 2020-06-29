@@ -121,6 +121,13 @@ en:
       index:
         question: "Question"
         user: "User"
+    badges:
+      create:
+        success: "Badge was successfully created."
+      update:
+        success: "Badge was successfully updated."
+      destroy:
+        success: "Badge was successfully destroyed."
 
   feedbacks:
     new:

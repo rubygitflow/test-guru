@@ -121,6 +121,13 @@ ru:
       index:
         question: "Вопрос"
         user: "Пользователь"
+    badges:
+      create:
+        success: "Знак отличия успешно создан."
+      update:
+        success: "Знак отличия успешно обновлен."
+      destroy:
+        success: "Знак отличия успешно удален."
 
   feedbacks:
     new:

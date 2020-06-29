@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 	    end
     end
     resources :gists, only: :index
+    resources :badges
   end
 
   resources :feedbacks, only: %i[new create] do
@@ -35,4 +36,7 @@ Rails.application.routes.draw do
     post :create
   end  
 
+  resources :badges, only: :index do
+    get :rewards, on: :collection
+  end
 end
