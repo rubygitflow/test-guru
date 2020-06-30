@@ -7,6 +7,8 @@ class TestPassage < ApplicationRecord
   has_many :test_passage_badges, dependent: :destroy
   has_many :badges, through: :test_passage_badges
 
+  scope :with_badges,     -> { 
+    joins(:test_passage_badges).group('test_passages.id') }
 
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_update_set_next_question

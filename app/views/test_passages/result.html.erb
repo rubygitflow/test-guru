@@ -9,6 +9,14 @@
     <span style = "color: red"><%= @completed_percent %>%.</span>
     <%= t('.failed_message') %>
   <% end %>
+  <% if @test_passage.badges.present? %>
+    <p class="card-text"><%= t('.rewards') %></p>
+    <p>
+      <% @test_passage.badges.each do |badge| %>
+        <img src="<%= badge.image_path %>"width="128" height="128" alt="badge">
+      <% end %>
+    </p>
+  <% end %>
 </div>
 
 <div class="py-1">

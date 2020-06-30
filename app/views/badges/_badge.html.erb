@@ -1,0 +1,13 @@
+<tr>
+  <td class="align-middle">
+    <img src="<%= badge.image_path %>"width="48" height="48" alt="badge">
+  </td>
+  <td class="align-middle" scope="row"><%= badge.title %></td>
+  <% if action_name == 'rewards' %>
+    <td class="align-middle" scope="row"><%= badge.test.title %></td>
+    <td class="align-middle" scope="row"><%= badge.test.category.title %></td>
+    <td class="align-middle" scope="row"><%= badge.test.level %></td>
+    <td class="align-middle" scope="row">
+      <%= badge.test_passage_badge(current_user).created_at %></td>
+  <% end %>
+</tr>

@@ -117,6 +117,9 @@ en:
       header: 'Admin Panel'
       welcome_html: 'Welcome, %{name} Guru'
       logout: 'Logout'
+      rewards: "My rewards"
+      badges: "All badges"
+      badges_link: "Badges management"
     gists:
       index:
         question: "Question"
@@ -128,6 +131,47 @@ en:
         success: "Badge was successfully updated."
       destroy:
         success: "Badge was successfully destroyed."
+      index:
+        header: "Badges list"
+        title: "Title"
+        image: "Image"
+        rule: "Rule"
+        actions: 'Actions'
+        new: "New Badge"
+      badge:
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+        confirm: 'Are you sure?'
+      show:
+        header: "Badge"
+        title: 'Title'
+        image: "Image"
+        rule: "Rule"
+        value: 'Value'
+        edit: 'Edit'
+        go_back: 'Go back'
+      new:
+        header: "New Badge"
+        go_back: 'Go back'
+      edit:
+        header: "Badge"
+        go_back: 'Go back'
+        show: 'Show'
+      form:  
+        valid_values: 'Valid values:'
+        levels: '- Levels'
+        categories: '- Categories' 
+
+  badges:
+    index:
+      header: "Badges list"
+      title: "Title"
+      image: "Image"
+      test: "Test"
+      category: "Category"
+      level: "Level"
+      date: "Date"
 
   feedbacks:
     new:
@@ -174,6 +218,8 @@ en:
       logout: 'Logout'
       registration: 'Registration'
       login: 'Log In'
+      rewards: "My rewards"
+      badges: "All badges"
     footer: 
       author: 'Nikolai Bocharov'
       title: 'Tests for all occasions.'
@@ -200,6 +246,7 @@ en:
       passed_message: 'Congratulation! Test was passed.'
       failed_message: 'Unfortunately, the test was failed!'
       go_back: 'Go back to the tests'
+      rewards: "Rewards"
     show:
       header: 'Pass the Test:'
       progress: 'Question'

@@ -1,0 +1,11 @@
+<h1 class="page_caption mt-3"><%= t('.header') %></h1>
+
+<div class="card">
+  <div class="card-body">
+    <%= render 'form', badge: @badge %>
+  </div>
+</div>
+
+<p class="mb-3">
+  <%= link_to t('go_back'), admin_badges_path %>
+</p>

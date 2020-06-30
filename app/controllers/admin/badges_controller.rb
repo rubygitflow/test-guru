@@ -45,6 +45,7 @@ class Admin::BadgesController < Admin::BaseController
   private
 
   def set_categories
+    @levels = '0, 1, 2, 3'
     @categories = Category.all
   end
 
@@ -52,7 +53,6 @@ class Admin::BadgesController < Admin::BaseController
     @badge = Badge.find(params[:id])
   end
 
-      UserBadgeService.new(@test_passage)
 
   def badge_params
     params.require(:badge).permit(:title, :image_path, :rule, :value)

@@ -12,7 +12,8 @@ class UserBadgeService
   def assign_badges
     return unless @test_passage.success?
 
-    Badge.all.each do |badge|
+    badges = Badge.all
+    badges.each do |badge|
       send(badge.rule_name, badge)
     end
   end
@@ -27,7 +28,8 @@ class UserBadgeService
   end
 
   def first_attempt_rule(badge)
-    return unless TestPassage.where(user_id: @user.id, test_id: @test.id).count == 1
+    control_count = TestPassage.where(user_id: @user.id, test_id: @test.id).count
+    return unless control_count == 1
 
     @test_passage.badges << badge
   end

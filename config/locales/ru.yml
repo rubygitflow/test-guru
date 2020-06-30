@@ -117,6 +117,9 @@ ru:
       header: 'Панель администратора'
       welcome_html: "Добро пожаловать, Гуру %{name}"
       logout: 'Выйти'
+      rewards: "Мои награды"
+      badges: "Все награды"
+      badges_link: "Управление знаками отличия"
     gists:
       index:
         question: "Вопрос"
@@ -128,6 +131,47 @@ ru:
         success: "Знак отличия успешно обновлен."
       destroy:
         success: "Знак отличия успешно удален."
+      index:
+        header: "Список знаков отличия"
+        title: "Название"
+        image: "Картинка"
+        rule: "Правило"
+        actions: 'Действия'
+        new: "Добавить новый знак отличия"
+      badge:
+        show: 'Показать'
+        edit: 'Редактировать'
+        delete: 'Удалить'
+        confirm: 'Вы уверены?'
+      show:
+        header: "Знак отличия"
+        title: "Название"
+        image: "Картинка"
+        rule: "Правило"
+        value: 'Значение'
+        edit: 'Редактировать'
+        go_back: 'Вернуться назад'
+      new:
+        header: "Новый знак отличия"
+        go_back: 'Вернуться назад'
+      edit:
+        header: "Знак отличия"
+        show: 'Показать'
+        go_back: 'Вернуться назад'
+      form:  
+        valid_values: 'Допустимые значения:'
+        levels: '- Уровни'
+        categories: '- Категории' 
+
+  badges:
+    index:
+      header: "Список знаков отличия"
+      title: "Название"
+      image: "Картинка"
+      test: "Тест"
+      category: "Категория"
+      level: "Уровень"
+      date: "Дата"
 
   feedbacks:
     new:
@@ -175,6 +219,8 @@ ru:
       logout: 'Выйти'
       registration: 'Зарегистрироваться'
       login: 'Войти'
+      rewards: "Мои награды"
+      badges: "Все награды"
     footer: 
       author: 'Николай Бочаров'
       title: 'Тесты на все случаи жизни.'
@@ -203,6 +249,7 @@ ru:
       passed_message: 'Поздравляем! Тест пройден.'
       failed_message: 'К сожалению тест провален!'
       go_back: 'Вернуться к списку тестов'
+      rewards: "Награды"
     show:
       header: 'Тест:'
       progress: 'Вопрос'

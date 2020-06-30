@@ -8,9 +8,9 @@ category_sections.each do |section|
     category = Category.create!(title: section)
     categories << category
   end
-  Badge.create!(rule: Badge::Rule::LEVEL,
+  Badge.create!(rule: Badge::Rule::CATEGORY,
                 title: "Expert #{category.title}",
-                image_path: Badge::Rule::DEF_IMAGE_LEVEL,
+                image_path: Badge::Rule::DEF_IMAGE_CATEGORY,
                 value: category.id)
 end
 
