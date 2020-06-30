@@ -3,43 +3,42 @@ class UserBadgeService
     @test_passage = test_passage
     @user = test_passage.user
     @test = test_passage.test
+  end
 
+  def call
     assign_badges
   end
 
   private
-
+    
   def assign_badges
-    return unless @test_passage.success?
-
     badges = Badge.all
     badges.each do |badge|
       send(badge.rule_name, badge)
     end
+    badges.each do |badge|
+      users.badges << badge if send("#{badge.rule_name}_award?", 
+                                    badge.value.to_i)
+    end
   end
 
-  def category_rule(badge)
-    value = badge.value.to_i
-
-    return if value != @test.category_id
+  def category_rule_award?(value)
+    return false if value != @test.category_id
 
     test_ids = Test.with_questions.where(category_id: value).pluck(:id)
-    @test_passage.badges << badge if @user.passed_tests?(test_ids)
+    @user.passed_tests?(test_ids)
   end
 
-  def first_attempt_rule(badge)
-    control_count = TestPassage.where(user_id: @user.id, test_id: @test.id).count
-    return unless control_count == 1
-
-    @test_passage.badges << badge
+  def first_attempt_rule_award?(value)
+    control_count = 
+      TestPassage.where(user_id: @user.id, test_id: @test.id).count
+    rcontrol_count == 1
   end
 
-  def level_rule(badge)
-    value = badge.value.to_i
-
-    return if value != @test.level
+  def level_rule_award?(value)
+    return false if value != @test.level
 
     test_ids = Test.with_questions.where(level: value).pluck(:id)
-    @test_passage.badges << badge if @user.passed_tests?(test_ids)
+    @user.passed_tests?(test_ids)
   end
 end
