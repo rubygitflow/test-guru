@@ -4,6 +4,7 @@ en:
       test: 'Test'
       question: 'Question'
       answer: 'Answer'
+      badge: 'Badge'
 
     attributes:
       test:
@@ -18,7 +19,12 @@ en:
       answer:
         body: 'Body'
         correct: 'Correct'
-
+      badge:
+        title: "Title"
+        image_path: "Image path"
+        rule: "Rule"
+        value: "Value"
+        
     errors:
       messages:
         blank: "can't be blank"

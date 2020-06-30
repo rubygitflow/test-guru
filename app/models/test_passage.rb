@@ -4,6 +4,11 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question',
                                 foreign_key: 'current_question_id', 
                                 optional: true
+  has_many :test_passage_badges, dependent: :destroy
+  has_many :badges, through: :test_passage_badges
+
+  scope :with_badges,     -> { 
+    joins(:test_passage_badges).group('test_passages.id') }
 
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_update_set_next_question
@@ -27,9 +32,8 @@ class TestPassage < ApplicationRecord
     self.save!
   end
 
-  def accept!(answer_ids)
-    self.correct_question += 1 if correct_answer?(answer_ids)
-    self.save!
+  def success?
+    get_completed_percent >= GOOD_PROGRESS
   end
 
   private
@@ -56,5 +60,4 @@ class TestPassage < ApplicationRecord
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
   end
-
 end

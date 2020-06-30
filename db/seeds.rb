@@ -3,8 +3,29 @@ user = User.where(name: 'architect').take
 category_sections = %w[Ruby RoR JavaScript React HTML CSS]
 categories = []
 category_sections.each do |section|
-  categories << Category.create!(title: section)
+  category = Category.where(title: section).take
+  unless category
+    category = Category.create!(title: section)
+    categories << category
+  end
+  Badge.create!(rule: Badge::Rule::CATEGORY,
+                title: "Expert #{category.title}",
+                image_path: Badge::Rule::DEF_IMAGE_CATEGORY,
+                value: category.id)
 end
+
+levels = [0, 1, 2 ,3 ]
+levels.each do |level|
+  Badge.create!(rule: Badge::Rule::LEVEL,
+                title: "GRADE #{level}",
+                image_path: Badge::Rule::DEF_IMAGE_LEVEL,
+                value: level)
+end
+
+Badge.create!(rule: Badge::Rule::FIRST_ATTEMPT,
+              title: "STAR",
+              image_path: Badge::Rule::DEF_IMAGE_FIRST_ATTEMPT)
+
 
 if user 
   tests_data = [

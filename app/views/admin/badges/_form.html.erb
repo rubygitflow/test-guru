@@ -1,0 +1,46 @@
+<%= form_with(model: [:admin, badge], local: true) do |form| %>
+  <%= render 'shared/errors', resource: badge %>
+
+  <div class="form-group">
+    <%= form.label :rule %>
+    <%= form.collection_radio_buttons(:rule, 
+                                      Badge::Rule.all, 
+                                      :id, :label) do |rb| %>
+      <div class="form-check">
+        <%= rb.radio_button(class: "form-check-input") %>
+        <%= rb.label(class: "form-check-label") %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :image_path %>
+    <%= form.text_field :image_path, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :value %>
+    <%= form.text_field :value, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <div> <%= t('.valid_values') %> </div>
+    <div> <%= t('.levels') %> </div>
+    <div> <%= @levels %> </div>
+    <div> <%= t('.categories') %> </div>
+    <% @categories.each do |category| %>
+        <span><%= category.id %></span>
+        <span><%= category.title %></span>
+        <br>
+    <% end %>
+  </div>
+
+  <div class="action_button">
+    <%= form.submit %>
+  </div>
+<% end %>

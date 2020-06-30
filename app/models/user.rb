@@ -12,10 +12,14 @@ class User < ApplicationRecord
 
   EMAIL_VALIDATION = /.+@.+\..+/i
 
-  has_many :test_passages
+  has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
-  has_many :authored_tests, class_name: "Test", foreign_key: "author_id"
-  has_many :gists
+  has_many :authored_tests, class_name: "Test", 
+                            foreign_key: "author_id", 
+                            dependent: :nullify
+  has_many :gists, dependent: :destroy
+  has_many :test_passage_badges, through: :test_passages
+  has_many :badges, through: :test_passage_badges
 
   validates :name, :email, presence: true
   validates :email, uniqueness: true, 
@@ -34,5 +38,11 @@ class User < ApplicationRecord
 
   def admin?
     is_a?(Admin)
+  end
+  
+  def passed_tests?(test_ids)
+    passed_test_ids = 
+      test_passages.where(test_id: test_ids).select(&:success?).map(&:test_id)
+    test_ids.uniq.sort == passed_test_ids.uniq.sort
   end
 end
