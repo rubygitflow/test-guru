@@ -2,15 +2,30 @@
 
 
 <div class="mt-3"><%= t('.progress') %> 
-  <%= @test_passage.current_question_number %>
-  /
-  <%= @test_passage.test.questions.size %>  
+  <span>
+    <%= @test_passage.current_question_number %>
+    /
+    <%= @test_passage.test.questions.size %>  
+  </span>
+  <span class="mx-3">
+  </span>
+  <span>
+    <% if @test_passage.seconds_left.positive? %>
+      <%= t('.time') %>: 
+      <%= content_tag :span, 
+          @test_passage.seconds_left, 
+          id: 'timer',
+          data: {seconds: @test_passage.seconds_left, 
+                 test_passage_id: @test_passage.id} %>
+    <% end %>
+  </span>
 </div>
 <div class="card border-primary mb-3">
   <div class="card-body">
     <h3><%= @test_passage.current_question.body %></h3>
 
-    <%= form_with(url: test_passage_path(@test_passage), local: true, method: :put) do |form| %>
+    <%= form_with(url: test_passage_path(@test_passage), 
+                  local: true, method: :put) do |form| %>
       <div class="form-group mt-3">
         <%= form.collection_check_boxes :answer_ids, 
                                         @test_passage.current_question.answers, 
@@ -23,8 +38,11 @@
           </div>
         <% end %>
 
-        <p><%= link_to t('.post_gist'), gist_test_passage_path(@test_passage), method: :post %></p>
-
+        <p>
+          <%= link_to t('.post_gist'), 
+            gist_test_passage_path(@test_passage), 
+            method: :post %>
+        </p>
 
         <%= form.submit t('.next'), 
           class: 'btn btn-primary mt-4 progress-button'%>
@@ -33,7 +51,8 @@
   </div>
   <div class="mt-3"> 
     <div id="progress">
-      <div id="bar" data-current-question="<%= @test_passage.current_question_number %>"
+      <div id="bar" 
+        data-current-question="<%= @test_passage.current_question_number %>"
         data-questions-size="<%= @test_passage.test.questions.size %>">  
       </div>
     </div>

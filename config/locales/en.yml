@@ -44,6 +44,7 @@ en:
         edit: 'Edit'
         go_back: 'Go to the list'
         go_forward: 'Show questions'
+        timer: "Test time, min."
       edit:
         show: 'Show'
         go_back: 'Go to the list'
@@ -53,6 +54,8 @@ en:
         create: 'Create a test'
       form_inline:
         submit: "OK"
+      form:
+        minutes: 'min.'
       update_inline:
         success: 'Test was successfully renamed.'
     questions:
@@ -252,6 +255,7 @@ en:
       progress: 'Question'
       post_gist: 'Gist Question'
       next: 'Next'
+      time: "Time left"
     gist:
       success: "<a href='%{url}' target='_blank'>Gist</a> was successfully created!"
       failure: "An error occurred while saving gist"
@@ -265,3 +269,5 @@ en:
         badge_label_of_first_attempt: 'Successful completion of the test on the first attempt'
         badge_label_of_level: 'Successful completion of all level tests'
         badge_label_of_category: 'Successful completion of all tests from the category'
+
+  timer: "Time is over"

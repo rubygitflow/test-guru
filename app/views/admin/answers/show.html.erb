@@ -1,13 +1,17 @@
 <%= render 'question_body', question: @answer.question %>
 
-<p>
-  <b class="page_caption"><%= t('.header') %></b>
-  <div class="answer_body"><%= @answer.body %></div>
-</p>
-<p>
-  <b class="page_caption"><%= t('.correct') %></b>
-  <div class="answer_boolean"><%= @answer.correct %></div>
-</p>
+<div class="card">
+  <div class="card-body">
+    <p class="card-text">
+      <b class="page_caption"><%= t('.header') %></b>
+      <div class="answer_body"><%= @answer.body %></div>
+    </p>
+    <p class="card-text">
+      <b class="page_caption"><%= t('.correct') %></b>
+      <div class="answer_boolean"><%= @answer.correct %></div>
+    </p>
+  </div>
+</div>
 
 <p>
   <span class="navigation_link">

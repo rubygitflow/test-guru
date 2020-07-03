@@ -5,10 +5,10 @@ class FeedbacksController < ApplicationController
   def create
     message = params[:feedback_body]
     if message.blank?
-      flash[:error] = t('.error')
+      flash[:danger] = t('.error')
     else
       FeedbacksMailer.feedback_message(current_user, message).deliver_now
-      flash[:notice] = t('.success')
+      flash[:success] = t('.success')
     end
     redirect_to new_feedback_url
   end

@@ -19,7 +19,7 @@ class Test < ApplicationRecord
   # https://apidock.com/rails/ActiveModel/Validations/ClassMethods/validates
   validates :title, presence: true, uniqueness: { scope: :level }
   # http://rusrails.ru/active-record-validations
-  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :level, :timer, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
 
   def self.test_by_category(category_title)

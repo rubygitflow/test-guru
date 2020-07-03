@@ -2,12 +2,16 @@
 
 <h2 class="page_caption"><%= answer_header(@answer) %></h2>
 
-<%= render 'form', answer: @answer %>
+<div class="card">
+  <div class="card-body">
+    <%= render 'form', answer: @answer %>
+  </div>
+</div>
 
 <p>
   <span class="navigation_link">
     <%= link_to t('.go_back'), 
-    			admin_question_path(@answer.question), 
+          admin_question_path(@answer.question), 
                 class: 'btn btn-sm' %>
   </span>
 </p>

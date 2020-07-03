@@ -1,11 +1,15 @@
 <%= render 'test_title', test: @test %>
 
-<p>
-  <b class="page_caption"><%= t('.header') %></b>
-  <div class="question_body"><%= @question.body %></div>
-</p>
+<div class="card">
+  <div class="card-body">
+    <p class="card-text">
+      <b class="page_caption"><%= t('.header') %></b>
+      <div class="question_body"><%= @question.body %></div>
+    </p>
 
-<%= render 'admin/answers/index', answers: @question.answers, question: @question %>
+    <%= render 'admin/answers/index', answers: @question.answers, question: @question %>
+  </div>
+</div>
 
 <p>
   <span class="navigation_link">

@@ -1,12 +1,17 @@
 <!-- https://apidock.com/rails/ActionView/Helpers/FormHelper/form_with -->
-<%= form_with(model: action_name == 'edit' ? [:admin, question] : [:admin, question.test, question], local: true) do |form| %>
+<%= form_with(model: action_name == 'edit' ? [:admin, question] : [:admin, 
+	question.test, question], local: true) do |form| %>
   <%= render 'shared/errors', resource: question %>
 
-  <div class="edit_text">
+  <div class="form-group">
     <b><%= form.label :body %>:</b>
-    <%= form.text_area :body, id: :question_body, rows: 7, cols: 80 %>
+    <%= form.text_area :body, 
+    	id: :question_body, 
+    	rows: 7, 
+    	cols: 80, 
+    	class: 'form-control' %>
   </div>
-  <div class="action_button">
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>

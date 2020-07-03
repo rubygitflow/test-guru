@@ -16,7 +16,7 @@ class Admin::TestsController < Admin::BaseController
     # see Part 11
     @test = current_user.authored_tests.new(test_params)
     if @test.save
-      flash[:notice] = t('.success')
+      flash[:info] = t('.success')
       redirect_to admin_test_path(@test)
     else
       render :new
@@ -25,7 +25,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-    flash[:notice] = t('.success')
+    flash[:info] = t('.success')
     redirect_to admin_tests_url
   end
 
@@ -34,7 +34,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      flash[:notice] = t('.success')
+      flash[:info] = t('.success')
       redirect_to admin_test_path(@test)
     else
       render :edit
@@ -43,7 +43,7 @@ class Admin::TestsController < Admin::BaseController
   
   def update_inline
     if @test.update(test_params)
-      flash[:notice] = t('.success')
+      flash[:info] = t('.success')
       redirect_to admin_tests_path
     else
       render :index
@@ -68,7 +68,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :timer)
   end
 
 end
