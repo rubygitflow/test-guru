@@ -27,7 +27,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
   private
 
   def set_locale

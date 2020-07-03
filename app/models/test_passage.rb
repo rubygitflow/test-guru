@@ -56,7 +56,6 @@ class TestPassage < ApplicationRecord
     self.current_question = next_question
   end
 
-
   def correct_answer?(answer_ids)
     answer_ids ||= []
     correct_answers.ids.sort == answer_ids.map(&:to_i).sort
@@ -66,11 +65,9 @@ class TestPassage < ApplicationRecord
     current_question.answers.correct
   end
 
-
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
   end
-
 
   def timer?
     test.timer.positive?
