@@ -13,6 +13,8 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_update_set_next_question
 
+  validate :validate_timer, on: :update, if: :timer?
+
   GOOD_PROGRESS = 85
 
   def current_question_number
@@ -27,13 +29,21 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
-  def accept!(answer_ids)
+  def accept?(answer_ids)
     self.correct_question += 1 if correct_answer?(answer_ids)
-    self.save!
+    self.save
   end
 
   def success?
     get_completed_percent >= GOOD_PROGRESS
+  end
+
+  def seconds_left
+    timer_in_seconds - duration_in_seconds
+  end
+
+  def time_is_up?
+    seconds_left.negative?
   end
 
   private
@@ -46,7 +56,6 @@ class TestPassage < ApplicationRecord
     self.current_question = next_question
   end
 
-
   def correct_answer?(answer_ids)
     answer_ids ||= []
     correct_answers.ids.sort == answer_ids.map(&:to_i).sort
@@ -56,8 +65,23 @@ class TestPassage < ApplicationRecord
     current_question.answers.correct
   end
 
-
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
+  end
+
+  def timer?
+    test.timer.positive?
+  end
+
+  def timer_in_seconds
+    test.timer * 60
+  end
+
+  def duration_in_seconds
+    Time.zone.now - created_at
+  end
+
+  def validate_timer
+    errors.add(:timer, I18n.t('timer')) if time_is_up?
   end
 end

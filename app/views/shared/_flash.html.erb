@@ -1,5 +1,6 @@
+<!-- https://getbootstrap.com/docs/4.0/components/alerts/ -->
 <% flash.each do |key, message| %>
-  <%= content_tag :div, message, class: "flash #{key} alert-dismissible fade show", role: 'alert' do %>
+  <%= content_tag :div, message, class: "flash alert alert-#{key} fade show", role: 'alert' do %>
     <%= message.html_safe %>
   <% end %>
 <% end %>

@@ -17,7 +17,7 @@ class Admin::BadgesController < Admin::BaseController
     @badge = Badge.new(badge_params)
 
     if @badge.save
-      flash[:notice] = t('.success')
+      flash[:info] = t('.success')
       redirect_to admin_badge_path(@badge)
     else
       render :new
@@ -26,7 +26,7 @@ class Admin::BadgesController < Admin::BaseController
 
   def destroy
     @badge.destroy
-    flash[:notice] = t('.success')
+    flash[:info] = t('.success')
     redirect_to admin_badges_url
   end
 
@@ -35,7 +35,7 @@ class Admin::BadgesController < Admin::BaseController
 
   def update
     if @badge.update(badge_params)
-      flash[:notice] = t('.success')
+      flash[:info] = t('.success')
       redirect_to admin_badge_path(@badge)
     else
       render :edit
@@ -53,9 +53,7 @@ class Admin::BadgesController < Admin::BaseController
     @badge = Badge.find(params[:id])
   end
 
-
   def badge_params
     params.require(:badge).permit(:title, :image_path, :rule, :value)
   end
 end
-

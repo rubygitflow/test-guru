@@ -19,14 +19,13 @@ class ApplicationController < ActionController::Base
 
   # use devise helper
   def after_sign_in_path_for(resource)
-    flash[:notice] = t('.after_sign_in_hello', name: current_user.name)
+    flash[:info] = t('.after_sign_in_hello', name: current_user.name)
     if resource.admin?
       admin_tests_path
     else
       super
     end
   end
-
 
   private
 

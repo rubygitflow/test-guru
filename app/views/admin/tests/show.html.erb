@@ -1,23 +1,32 @@
 <h1 class="page_caption mt-3"><%= t('.header') %></h1>
-<p>
-  <b><%= t('.category') %></b>
-  <%= @test.category.title %>
-</p>
+<div class="card">
+  <div class="card-body">
+    <p class="card-text">
+      <b><%= t('.category') %></b>
+      <%= @test.category.title %>
+    </p>
 
-<p>
-  <b><%= t('.title') %></b>
-  <%= @test.title %>
-</p>
+    <p class="card-text">
+      <b><%= t('.title') %></b>
+      <%= @test.title %>
+    </p>
 
-<p>
-  <b><%= t('.level') %></b>
-  <%= @test.level %>
-</p>
+    <p class="card-text">
+      <b><%= t('.level') %></b>
+      <%= @test.level %>
+    </p>
 
-<p>
-  <b><%= t('.author') %></b>
-  <%= @test.author.email %>
-</p>
+    <p class="card-text">
+      <b><%= t('.timer') %>:</b>
+      <%= @test.timer %>
+    </p>
+
+    <p class="card-text">
+      <b><%= t('.author') %></b>
+      <%= @test.author.email %>
+    </p>
+  </div>
+</div>
 
 <p>
   <span class="navigation_link">

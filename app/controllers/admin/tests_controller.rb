@@ -1,5 +1,6 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :find_test, only: %i[show edit update destroy start update_inline]
+  before_action :find_test, 
+    only: %i[show edit update destroy start update_inline]
   before_action :set_tests, only: %i[index update_inline]
 
   def index
@@ -16,7 +17,7 @@ class Admin::TestsController < Admin::BaseController
     # see Part 11
     @test = current_user.authored_tests.new(test_params)
     if @test.save
-      flash[:notice] = t('.success')
+      flash[:info] = t('.success')
       redirect_to admin_test_path(@test)
     else
       render :new
@@ -25,7 +26,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-    flash[:notice] = t('.success')
+    flash[:info] = t('.success')
     redirect_to admin_tests_url
   end
 
@@ -34,7 +35,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      flash[:notice] = t('.success')
+      flash[:info] = t('.success')
       redirect_to admin_test_path(@test)
     else
       render :edit
@@ -43,7 +44,7 @@ class Admin::TestsController < Admin::BaseController
   
   def update_inline
     if @test.update(test_params)
-      flash[:notice] = t('.success')
+      flash[:info] = t('.success')
       redirect_to admin_tests_path
     else
       render :index
@@ -55,20 +56,18 @@ class Admin::TestsController < Admin::BaseController
     redirect_to current_user.test_passage(@test)
   end
 
-
   private
 
   def set_tests
     @tests = Test.all
   end
 
-
   def find_test
     @test = Test.find(params[:id])
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :timer)
   end
 
 end
