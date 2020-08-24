@@ -91,7 +91,7 @@ en:
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
     shared:
       links:
-        back: Назад
+        back: Back
         didn_t_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
         didn_t_receive_unlock_instructions: "Didn't receive unlock instructions?"
         forgot_your_password: "Forgot your password?"
