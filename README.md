@@ -1,20 +1,6 @@
 # TestGuru
 
-List of project entities:
-
-* User
-
-* Syllabus
-
-* Answer
-
-* Author
-
-* Topic
-
-* Question
-
-* ...
+This is the training project TestGuru by Thinknetica.com
 
 Use yarn
 https://gist.github.com/Lumbe/131ce913ebd97b5c705ea4cb52c73ed4
