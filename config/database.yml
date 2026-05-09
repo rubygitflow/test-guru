@@ -7,14 +7,14 @@ development:
   <<: *default
   encoding: utf8
   database: test_guru_development
-  username: dekan
+  username: postgres
   password: 
 
 test:
   <<: *default
   encoding: utf8
   database: test_guru_test
-  username: dekan
+  username: postgres
   password: 
 
 production:
