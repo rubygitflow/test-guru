@@ -302,7 +302,7 @@ DEPENDENCIES
   octicons_helper
   octokit
   pg
-  puma (~> 4.3.5)
+  puma (~> 4.3.12)
   rack (>= 2.2.3)
   rails (~> 6.0.3, >= 6.0.3.2)
   sass-rails (>= 6)
