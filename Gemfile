@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '2.7.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
@@ -11,7 +11,7 @@ gem "rack", ">= 2.2.3"
 
 gem 'pg'
 # Use Puma as the app server
-gem 'puma', '~> 4.3.5'
+gem 'puma', '~> 4.3.12'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -37,6 +37,8 @@ gem 'devise-i18n'
 
 gem 'jquery-rails', '~> 4.4.0'
 gem 'bootstrap', '~> 4.5.0'
+
+gem 'webpacker', '~> 5.0'
 
 # HTTP/REST API client library.
 gem 'faraday'
